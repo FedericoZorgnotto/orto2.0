@@ -17,6 +17,10 @@ class User:
         else:
             return False
 
+    def change_password(self, password):
+        self.hash_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+        self.save()
+
     def delete(self):
         self.database.delete(self.email)
 
