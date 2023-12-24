@@ -2,30 +2,56 @@ import bcrypt
 
 from app.services import database
 
+
 class User:
-    def __init__(self, email, password):
-        self.email = email
-        self.hash_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-        self.database = database('users')
+    def __init__(self):
+        self.username = None
+        self.email = None
+        self.password = None
+        self.logged = False
+        self.database = database(host="localhost", user="root", password="1234", database="orto")
 
-    def save(self):
-        self.database.set(self.email, self.hash_password)
+    def register(self, username, email, password):
+        try:
+            cursor = self.database.connection.cursor()
+            query = "SELECT * FROM auth WHERE username = %s OR email = %s"
+            data = (username, email)
+            cursor.execute(query, data)
 
-    def check_password(self, password):
-        if self.database.get(self.email):
-            return bcrypt.checkpw(password.encode('utf-8'), self.database.get(self.email).encode('utf-8'))
-        else:
-            return False
+            if cursor.fetchone():
+                return 'utente già esistente'
+            else:
+                query = "INSERT INTO auth (username, email, password_hash) VALUES (%s, %s, %s)"
+                data = (username, email, password)
+                cursor.execute(query, data)
+                self.database.connection.commit()
+                return 'successo'
+        except Exception as e:
+            print("errore durante la registrazione: ", e)
+            return 'errore interno'
 
-    def change_password(self, password):
-        self.hash_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-        self.save()
-
-    def delete(self):
-        self.database.delete(self.email)
-
-    def user_exists(self):
-        return self.database.get(self.email) is not None
-
-    def __repr__(self):
-        return '<User %r>' % self.email
+    def login(self, password, username=None, mail=None):
+        try:
+            cursor = self.database.connection.cursor()
+            if username:
+                query = "SELECT * FROM auth WHERE username = %s"
+                data = (username,)
+            else:
+                query = "SELECT * FROM auth WHERE email = %s"
+                data = (mail,)
+            cursor.execute(query, data)
+            result = cursor.fetchone()
+            if result:
+                if bcrypt.checkpw(password.encode('utf-8'), result[3].encode('utf-8')):
+                    self.logged = True
+                    self.username = result[1]
+                    self.email = result[2]
+                    self.password = result[3]
+                    return 'successo'
+                else:
+                    return 'password errata'
+            else:
+                return 'utente non trovato'
+        except Exception as e:
+            print("errore durante il login: ", e)
+            return 'errore interno'
