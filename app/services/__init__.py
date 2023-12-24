@@ -1,1 +1,1 @@
-from .database.JSONdatabase import JSONdatabase as database
+from .database.MysqlController import MySQLController as database
