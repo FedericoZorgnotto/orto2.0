@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrazione</title>
+    <script src="{{ url_for('static', filename='scripts/importLib.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 </head>
 <body>
 <h1>Registrazione</h1>
 {% if error %}
     <p style="color: red;">{{ error }}</p>
 {% endif %}
-<form method="post" action="{{ url_for('auth.register') }}">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
-<br>
+    <br>
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
-<br>
+    <br>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
-<br>
-    <button type="submit">Registrati</button>
-</form>
+    <br>
+    <button id="sendRegister">invia</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/register.js') }}"></script>
 </body>
 </html>
