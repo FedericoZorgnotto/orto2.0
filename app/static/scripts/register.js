@@ -5,5 +5,10 @@ document.getElementById("sendRegister").onclick = function (){
     password: sha1($("#password").val()),
     username: $("#username").val()
   })
-    console.log(sendReq("post", null, body));
+    sendReq("post", null, body, (result => {
+      console.log(result);
+      if(result.message == "utente già esistente"){
+        login(body.username, body.password);
+      }
+    }));
 };
