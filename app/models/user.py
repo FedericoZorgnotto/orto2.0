@@ -9,7 +9,7 @@ class User:
         self.email = None
         self.password = None
         self.logged = False
-        self.database = database(host="109.123.240.145", user="root", password="1234", database="orto")
+        self.database = database(host="109.123.240.145", user="root", password="qP4yzK2Lyz6XcGk7B2E7Z", database="orto")
 
     def register(self, username, email, password):
         try:
