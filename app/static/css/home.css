@@ -11,7 +11,6 @@ footer h3 {
     font-weight: bold;
 }
 
-
 .wrapper div {
     background-color: #44653B;
     color: #F5F5F7;
@@ -21,7 +20,6 @@ footer h3 {
     transition: all 0.1s ease-in-out;
     transform: scale(1.05);
 }
-
 
 @media screen and (min-width: 992px) {
     .wrapper {
@@ -251,7 +249,10 @@ footer h3 {
 
 @media screen and (max-width: 430px) {
     .wrapper {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 500px);
+        grid-auto-rows: minmax(200px, auto);
+        grid-gap: 50px;
 
     }
 }
