@@ -3,33 +3,40 @@ body {
     width: 100%;
 }
 
-.wrapper{
+footer h3 {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    color: #44653B;
+    font-weight: bold;
+}
+
+.wrapper {
     display: grid;
-    margin: 0 auto;
     grid-template-columns: repeat(4, 200px);
     grid-auto-rows: minmax(200px, auto);
     grid-gap: 20px;
 }
 
 .centered {
-    position: absolute; 
-    margin-left: 25%;
     margin-top: 20%;
+    display: flex;
+    justify-content: space-around;
 }
 
-.wrapper div{
+.wrapper div {
     background-color: #44653B;
     color: #F5F5F7;
 }
 
-.wrapper div:hover{
+.wrapper div:hover {
     transition: all 0.1s ease-in-out;
     transform: scale(1.05);
 }
 
-.grid1{
+.grid1 {
     grid-column: 1/2;
-    grid-row:1/2;
+    grid-row: 1/2;
     border-radius: 0% 0% 50% 0%;
     width: 200px;
 }
@@ -39,12 +46,12 @@ body {
     font-size: 28px;
     font-weight: bold;
     margin-top: 135px;
-    margin-left: 25px;    
+    margin-left: 25px;
 }
 
-.grid2{
-    grid-column:2/3;
-    grid-row:1/2;
+.grid2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
     border-radius: 100px;
     width: 280px;
 }
@@ -54,11 +61,11 @@ body {
     font-size: 28px;
     font-weight: bold;
     margin-top: 80px;
-    margin-left: 95px;    
+    margin-left: 95px;
 }
 
-.grid3{
-    grid-column:3/4;
+.grid3 {
+    grid-column: 3/4;
     grid-row: 1/2;
     border-radius: 0px 0px 100px 0px;
     width: 200px;
@@ -70,11 +77,11 @@ body {
     font-size: 28px;
     font-weight: bold;
     margin-top: 135px;
-    margin-left: 70px;    
+    margin-left: 70px;
 }
 
-.grid4{
-    grid-column:4/4;
+.grid4 {
+    grid-column: 4/4;
     grid-row: 1/3;
     border-radius: 100px 0px 100px 0px;
     width: 200px;
@@ -86,7 +93,7 @@ body {
     font-size: 28px;
     font-weight: bold;
     margin-top: 75px;
-    margin-left: 60px;    
+    margin-left: 60px;
 }
 
 #text4down {
@@ -94,10 +101,10 @@ body {
     font-size: 28px;
     font-weight: bold;
     margin-top: 315px;
-    margin-left: 50px;    
+    margin-left: 50px;
 }
 
-.grid5{
+.grid5 {
     grid-column: 1/3;
     grid-row: 2/2;
     border-radius: 0px 100px 0px 100px;
@@ -109,10 +116,10 @@ body {
     font-size: 28px;
     font-weight: bold;
     margin-top: 135px;
-    margin-left: 60px;    
+    margin-left: 60px;
 }
 
-.grid6{
+.grid6 {
     grid-column: 3/4;
     grid-row: 2/2;
     border-radius: 100px 100px 0px 0px;
@@ -125,5 +132,202 @@ body {
     font-size: 28px;
     font-weight: bold;
     margin-top: 30px;
-    margin-left: 68px;      
+    margin-left: 68px;
+}
+
+
+@media screen and (min-width: 430px) and (max-width: 992px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-auto-rows: minmax(200px, auto);
+        grid-gap: 20px;
+    }
+
+    .grid1 {
+        grid-column: 1/3;
+        grid-row: 1/2;
+        border-radius: 0% 0% 50% 0%;
+        width: 200px;
+    }
+
+    #text1 {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 135px;
+        margin-left: 25px;
+    }
+
+    .grid2 {
+        grid-column: 2/2;
+        grid-row: 1/2;
+        border-radius: 100px;
+        width: 280px;
+    }
+
+    #text2 {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-left: 95px;
+    }
+
+    .grid3 {
+        grid-column: 3/3;
+        grid-row: 1/2;
+        border-radius: 0px 0px 100px 0px;
+        width: 200px;
+        margin-left: 80px;
+    }
+
+    #text3 {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 135px;
+        margin-left: 70px;
+    }
+
+    .grid4 {
+        grid-column: 1/3;
+        grid-row: 3/3;
+        border-radius: 100px 0px 100px 0px;
+        width: 720px;
+        margin-left: 0px;
+    }
+
+    #text4up {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 75px;
+    }
+
+    #text4down {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 75px;
+        margin-left: 57%;
+    }
+
+    .grid5 {
+        grid-column: 1/2;
+        grid-row: 2/2;
+        border-radius: 0px 100px 0px 100px;
+        width: 500px;
+    }
+
+    #text5 {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 135px;
+        margin-left: 60px;
+    }
+
+    .grid6 {
+        grid-column: 3/3;
+        grid-row: 2/2;
+        border-radius: 100px 100px 0px 0px;
+        width: 200px;
+    }
+
+    #text6 {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-left: 68px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 500px);
+        grid-auto-rows: minmax(200px, auto);
+        grid-gap: 20px;
+    }
+
+    .grid1 {
+        border-radius: 0% 0% 50% 0%;
+    }
+
+    #text1 {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 135px;
+        margin-left: 25px;
+    }
+
+    .grid2 {
+        border-radius: 100px;
+    }
+
+    #text2 {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-left: 95px;
+    }
+
+    .grid3 {
+        border-radius: 0px 0px 100px 0px;
+    }
+
+    #text3 {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 135px;
+        margin-left: 70px;
+    }
+
+    .grid4 {
+        border-radius: 100px 0px 100px 0px;
+    }
+
+    #text4up {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 75px;
+    }
+
+    #text4down {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 75px;
+        margin-left: 57%;
+    }
+
+    .grid5 {
+        border-radius: 0px 100px 0px 100px;
+    }
+
+    #text5 {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 135px;
+        margin-left: 60px;
+    }
+
+    .grid6 {
+        border-radius: 100px 100px 0px 0px;
+    }
+
+    #text6 {
+        position: absolute;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-left: 68px;
+    }
 }
