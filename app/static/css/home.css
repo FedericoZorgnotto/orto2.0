@@ -253,6 +253,6 @@ footer h3 {
         grid-template-columns: repeat(2, 500px);
         grid-auto-rows: minmax(200px, auto);
         grid-gap: 50px;
-
+/*non capisco perche ma non va un tubo, qui io pensavo di mettere un display flex e un flex wrap:wrap; in modo che vadano tutti uno sotto l'altro*/
     }
 }
