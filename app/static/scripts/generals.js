@@ -4,7 +4,6 @@ window.onload = () =>{
     else{
         autoLogin();
         console.log("load");
-
     }
 }
 function autoLogin(){
