@@ -14,9 +14,14 @@ footer h3 {
 .wrapper div {
     background-color: #44653B;
     color: #F5F5F7;
+
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-delay: 0.30s;
 }
 
 .wrapper div:hover {
+
     transition: all 0.1s ease-in-out;
     transform: scale(1.05);
 }
