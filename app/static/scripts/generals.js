@@ -38,13 +38,13 @@ function login(username, password, callback){
     }
     sendReq("post", "https://" + location.host + "/auth/login", body, (result)=>{
         console.log(result);
-        if(result.message == "errore interno"){
+        if(result.message == "successo"){
             localStorage.setItem("sessionUn", body.username);
             localStorage.setItem("sessionPwd", body.password);
             $("#loginBtn").hide();
             $("#profileMenu").show();
             $("#username").text(body.username);
-        }else
+        }else //aggiungere stampa errore
             logout();
         if(callback != null)
             callback();
