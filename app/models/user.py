@@ -42,7 +42,7 @@ class User:
             cursor.execute(query, data)
             result = cursor.fetchone()
             if result:
-                if bcrypt.checkpw(password.encode('utf-8'), result[3].encode('utf-8')):
+                if password == result[3]:
                     self.logged = True
                     self.username = result[1]
                     self.email = result[2]
