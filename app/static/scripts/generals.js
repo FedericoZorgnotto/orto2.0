@@ -1,22 +1,36 @@
-$(window).on("load",function (){
-    autoLogin();
-    console.log("load");
-});
+window.onload = () =>{
+    if(typeof jQuery === 'undefined')
+        location.reload();
+    else{
+        autoLogin();
+        console.log("load");
+
+    }
+}
 function autoLogin(){
-    console.log(localStorage.getItem("sessionPwd")!="null");
     if(localStorage.getItem("sessionPwd")!="null" && localStorage.getItem("sessionUn")!="null"){
-        login(localStorage.getItem("sessionUn"), localStorage.getItem("sessionPwd"), ()=>{
-            console.log("logged in");
-            if(document.getElementById("loggedWith") != null)
-                document.getElementById("loggedWith").innerText = body.username;
-        });
+        login(localStorage.getItem("sessionUn"), localStorage.getItem("sessionPwd"));
+    }
+    //da rimuovere con aggiustamento risposte server
+    else{
+        $("#profileMenu").hide();
+        $("#loginBtn").show();
     }
 }
 
 function logout(){
-    localStorage.setItem("sessionUn", null);
-    localStorage.setItem("sessionPwd", null);
-    document.getElementById("loggedWith").innerText = "non loggato";
+    if(localStorage.getItem("sessionUn")==null){
+        $("#profileMenu").hide();
+        $("#loginBtn").show();
+    }else {
+        localStorage.setItem("sessionUn", null);
+        localStorage.setItem("sessionPwd", null);
+        location.reload();
+    }
+}
+
+function criptLogin(username, password, callback){
+    login(username, sha1(password), callback);
 }
 function login(username, password, callback){
     body = {
@@ -28,7 +42,11 @@ function login(username, password, callback){
         if(result.message == "errore interno"){
             localStorage.setItem("sessionUn", body.username);
             localStorage.setItem("sessionPwd", body.password);
-        }
+            $("#loginBtn").hide();
+            $("#profileMenu").show();
+            $("#username").text(body.username);
+        }else
+            logout();
         if(callback != null)
             callback();
     });
@@ -36,7 +54,6 @@ function login(username, password, callback){
 
 function sendReq(method ,url, body, callback){
     console.log(url);
-    let ret = "METHOD NOT FOUND";
     switch (method){
         case "get":
             $.get((url == null) ? location.href : url,(result)=>{callback(result)});
@@ -44,5 +61,7 @@ function sendReq(method ,url, body, callback){
         case "post":
             $.post((url == null) ? location.href : url, body, (result)=>{(callback != null)?callback(result):{}});
             break;
+        default:
+            return "UNKNOWN METHOD";
     }
 }
