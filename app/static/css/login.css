@@ -1,157 +1,160 @@
 /* --- Color Palette --- */
 body {
-  background-color: var(--white);
+    background-color: var(--white);
 }
 
 nav a, #slash, #home {
-  color: var(--green);
+    color: var(--green);
 }
 
 .ball-Pointer, .visible-Ball-Pointer {
-  background-color: var(--green);    
+    background-color: var(--green);
 }
+
 /* --------------------- */
 
 
 /* --- SingUp Form --- */
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #card {
-  background-color: white;
-  position: absolute;
-  width: 475px;
-  height: 630px;
-  margin-top: 940px;
-  padding: 35px 50px 30px 55px;
-  border-radius: 35px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);  
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+    background-color: white;
+    position: absolute;
+    width: 580px;
+    height: 700px;
+    margin-top: 940px;
+    padding: 35px 50px 30px 55px;
+    border-radius: 35px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 h1 {
-  color: var(--green);
-  font-size: 32px;
-  font-weight: bold;
-  margin-top: 0px;
-  margin-bottom: 70px;
+    color: var(--green);
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 70px;
 }
 
 input {
-  color: var(--green);
-  border: solid 5px var(--green);
-  border-radius: 35px;
-  height: 12px;
-  width: 435px;
-  padding: 15px;
-  font-size: 16px;
-  font-weight: bold;
-  font-style: italic;
+    color: var(--green);
+    border: solid 5px var(--green);
+    border-radius: 35px;
+    height: 15px;
+    width: 465px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
 }
 
 input::placeholder {
-  color: var(--green);
-  font-size: 16px;
-  font-weight: bold;
-  font-style: italic;
+    color: var(--green);
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .user-Account {
-  margin-bottom: 15px;  
+    margin-bottom: 15px;
 }
 
 .negative-Feedback {
-  color: var(--green);
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-  margin-left: 20px;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
 }
 
 .hide {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .ball-Negative-Feedback {
-  background: var(--green);
-  border-radius: 35px;
-  width: 11px;
-  height: 11px;
-  margin-right: 5px;
+    background: var(--green);
+    border-radius: 35px;
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
 }
 
 #forgot {
-  color: var(--green);
-  font-weight: bold;
-  font-size: 16px;
-  margin-right: 20px;
+    color: var(--green);
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 20px;
 }
 
-#forgot-Btn{
-  display: flex;
-  justify-content: space-between;
+#forgot-Btn {
+    display: flex;
+    justify-content: space-between;
 }
 
 #validation-Button {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-top: 135px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 135px;
 }
 
 #enter-Account {
-  color: var(--white);
-  background-color: var(--green);
-  font-weight: bold;
-  font-style: italic;
-  font-size: 16px;  
-  width: 230px;
-  height: 50px;
-  padding-left: 20px;
-  padding-top: 4px;
-  border-radius: 35px;
-  border: none;
-  text-align: left;
-  transition: text-indent 0.5s ease;
+    color: var(--white);
+    background-color: var(--green);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    width: 230px;
+    height: 50px;
+    padding-left: 20px;
+    padding-top: 4px;
+    border-radius: 35px;
+    border: none;
+    text-align: left;
+    transition: text-indent 0.5s ease;
 }
 
 #enter-Account:hover {
-  text-indent: 125px;
+    text-indent: 125px;
 }
+
 /* ------------------- */
 
 
 /* --- Google Button --- */
 .login-with-google-btn {
-  color: #757575;
-  font-weight: bold;
-  font-size: 16px;  
-  width: 475px;
-  height: 50px;
-  margin-top: 80px;
-  padding-left: 20px;
-  padding-top: 4px;
-  border-radius: 35px;
-  border: solid 4px var(--green);
-  transition: background-color 0.3s, box-shadow 0.3s;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
-  background-color: white;
-  background-repeat: no-repeat;
-  background-position: 14px 12px ;
+    color: #757575;
+    font-weight: bold;
+    font-size: 16px;
+    width: 475px;
+    height: 50px;
+    margin-top: 80px;
+    padding-left: 20px;
+    padding-top: 4px;
+    border-radius: 35px;
+    border: solid 4px var(--green);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: 14px 12px;
 }
 
 .login-with-google-btn:hover {
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .login-with-google-btn:active {
-  background-color: #eeeeee;
+    background-color: #eeeeee;
 }
+
 /* --------------------- */

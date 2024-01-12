@@ -2,7 +2,6 @@
     --green: #44653B;
     --white: #F5F5F7;
     --dark: #2D4028;
-
 }
 
 
@@ -11,14 +10,24 @@ footer h3 {
   position: fixed;
   right: 12.7%;
   bottom: 0%;
+  font-size: 20px;
 }
 
 /* --- Font --- */
 @font-face {
   font-family: 'Roboto Mono', monospace;
-  src: url(../fonts/RobotoMono-Italic-VariableFont_wght.ttf);
-  src: url(../fonts/RobotoMono-VariableFont_wght.ttf);
+  src: url('../fonts/RobotoMono-Italic-VariableFont_wght.ttf');
+  src: url('../fonts/RobotoMono-VariableFont_wght.ttf');
 }
+
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+h3 {
+    font-weight: bolder;
+}
+
 
 html {
   font-family: 'Roboto Mono', monospace;
