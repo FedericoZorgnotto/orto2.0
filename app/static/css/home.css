@@ -4,45 +4,27 @@ body {
 }
 
 
-main {
+#centro {
     display: flex;
-    align-content: space-between;
-    width: 100%;
-    height: 500%;
-    gap: 50px;
+    justify-content: space-evenly;
+    margin-top: 15%;
+    margin-right: 7%;
 }
 
-#divsx {
-    border: black 1px solid;
-    width: 100%;
+img {
+    display: flex;
+    justify-content: space-evenly;
+    width: 6%;
+    height: 6%;
+    margin-left: 46%;
+    margin-top: 1%;
 }
 
-#divdx {
-    border: black 1px solid;
-    width: 100%;
-}
-
-
-.ontop {
-    z-index: 9999;
-}
-
-
-footer h3 {
-    position: absolute;
-    right: 5%;
-    bottom: 0;
-    color: #44653B;
-    font-weight: bold;
-}
 
 .wrapper div {
     background-color: #44653B;
     color: #F5F5F7;
-
-  transition-property: all;
-  transition-duration: 0.4s;
-  transition-delay: 0.30s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
 
 .wrapper div:hover {
@@ -51,6 +33,16 @@ footer h3 {
 }
 
 @media screen and (min-width: 992px) {
+    img {
+        display: flex;
+        justify-content: space-evenly;
+        width: 6%;
+        height: 6%;
+        margin-left: 45%;
+        margin-top: 1%;
+    }
+
+
     .wrapper {
         display: grid;
         grid-template-columns: repeat(4, 200px);
@@ -58,16 +50,10 @@ footer h3 {
         grid-gap: 20px;
     }
 
-    .centered {
-        margin-top: 20%;
-        display: flex;
-        justify-content: space-around;
-    }
-
     .grid1 {
         grid-column: 1/2;
         grid-row: 1/2;
-        border-radius: 0% 0% 50% 0%;
+        border-radius: 0 0 50% 0;
         width: 200px;
     }
 
@@ -124,6 +110,8 @@ footer h3 {
         font-weight: bold;
         margin-top: 75px;
         margin-left: 60px;
+        text-decoration: none;
+        color: #F5F5F7;
     }
 
     #text4down {
@@ -132,6 +120,8 @@ footer h3 {
         font-weight: bold;
         margin-top: 315px;
         margin-left: 50px;
+        text-decoration: none;
+        color: #F5F5F7;
     }
 
     .grid5 {
@@ -168,6 +158,16 @@ footer h3 {
 
 
 @media screen and (min-width: 430px) and (max-width: 992px) {
+    img {
+        display: flex;
+        justify-content: space-evenly;
+        width: 6%;
+        height: 6%;
+        margin-left: 47%;
+        margin-top: 1%;
+    }
+
+
     .wrapper {
         display: grid;
         grid-template-columns: repeat(3, 200px);
@@ -234,8 +234,8 @@ footer h3 {
         font-weight: bold;
         margin-top: 85px;
         margin-left: 70px;
-        text-decoration: none !important;
-        color: initial;
+        text-decoration: none;
+        color: #F5F5F7;
 
     }
 
@@ -245,6 +245,8 @@ footer h3 {
         font-weight: bold;
         margin-top: 85px;
         margin-left: 560px;
+        text-decoration: none;
+        color: #F5F5F7;
     }
 
     .grid5 {
@@ -280,10 +282,15 @@ footer h3 {
 }
 
 @media screen and (max-width: 430px) {
+    div {
+        background-color: yellow;
+    }
+
+
     .wrapper {
-        display: grid;
-        grid-template-columns: repeat(2, 500px);
-        grid-auto-rows: minmax(200px, auto);
+        display: flex;
+        /*grid-template-columns: repeat(2, 500px);
+        //grid-auto-rows: minmax(200px, auto);
         grid-gap: 50px;
         /*non capisco perche ma non va un tubo, qui io pensavo di mettere un display flex e un flex wrap:wrap; in modo che vadano tutti uno sotto l'altro*/
     }

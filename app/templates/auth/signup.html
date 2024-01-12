@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione</title>
+    <script type="text/plain" class="ttt" src="{{ url_for('static', filename='scripts/register.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/importLib.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+<body>
+<header>
+    <nav>
+        <div class="header-left">
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a href="trade.html">TRADE</a>
+            </div>
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a href="purchase.html">PURCHASE</a>
+            </div>
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a href="learn.html">LEARN</a>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a id="home" href="index.html">HOME</a>
+            </div>
+            <div class="account">
+                <div class="selector">
+                    <div class="visible-Ball-Pointer"></div>
+                    <a class="noMargin" href="signup.html">SIGNUP</a>
+                </div>
+                <div id="slash">/</div>
+                <div class="selector">
+                    <a class="noMargin" href="login.html">LOGIN</a>
+                    <div class="ball-Pointer"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <h3 class="floating-Text">
+        Hi there, <span class="italic">sign up</span><br>and start exploring :)
+    </h3>
+    <div id="card">
+        <h1>New account</h1>
+        <div id="user-Info">
+            <div>
+                <input type="text" id="userName" placeholder="NAME"/>
+                <div class="negative-Feedback hide" id="nameError">
+                    <div class="ball-Negative-Feedback"></div>
+                    Add your name
+                </div>
+            </div>
+            <div>
+                <input type="text" id="userSurname" placeholder="SURNAME"/>
+                <div class="negative-Feedback hide" id="surnameError">
+                    <div class="ball-Negative-Feedback"></div>
+                    Add your surname
+                </div>
+            </div>
+        </div>
+        <div class="user-Account" id="user-Account-Margin">
+            <input type="text" id="userHandle" placeholder="HANDLE"/>
+            <div class="negative-Feedback hide" id="handleError">
+                <div class="ball-Negative-Feedback"></div>
+                error
+            </div>
+        </div>
+        <div class="user-Account">
+            <input type="email" id="userEmail" placeholder="EMAIL"/>
+            <div class="negative-Feedback hide" id="emailError">
+                <div class="ball-Negative-Feedback"></div>
+                error
+            </div>
+        </div>
+        <div class="user-Account">
+            <input type="password" id="userPassword" placeholder="PASSWORD"/>
+            <div class="negative-Feedback hide" id="passwordError">
+                <div class="ball-Negative-Feedback"></div>
+                At least 8 characters, stay safe
+            </div>
+        </div>
+        <div id="validation-Buttons">
+            <button type="button" class="login-with-google-btn" onclick="googleBtn()">
+                Continue with Google
+            </button>
+            <button id="create-Account" onclick="udTest()">CREATE</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <h3>GARDEN 2.0 © 2023</h3>
+</footer>
+</body>
+</html>

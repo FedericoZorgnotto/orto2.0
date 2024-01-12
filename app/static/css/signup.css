@@ -47,7 +47,7 @@ input {
     color: var(--green);
     border: solid 5px var(--green);
     border-radius: 35px;
-    height: 15px;
+    height: 12px;
     width: 465px;
     padding: 20px;
     font-size: 16px;
@@ -57,13 +57,28 @@ input {
 
 input::placeholder {
     color: var(--green);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     font-style: italic;
 }
 
+#user-Info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#user-Info input {
+    width: 235px;
+}
+
 .user-Account {
     margin-bottom: 15px;
+}
+
+#user-Account-Margin {
+    margin-bottom: 50px;
 }
 
 .negative-Feedback {
@@ -87,32 +102,20 @@ input::placeholder {
     margin-right: 5px;
 }
 
-#forgot {
-    color: var(--green);
-    font-weight: bold;
-    font-size: 16px;
-    margin-right: 20px;
-}
-
-#forgot-Btn {
-    display: flex;
-    justify-content: space-between;
-}
-
-#validation-Button {
+#validation-Buttons {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin-top: 135px;
+    justify-content: space-between;
+    margin-top: 70px;
 }
 
-#enter-Account {
+#create-Account {
     color: var(--white);
     background-color: var(--green);
     font-weight: bold;
     font-style: italic;
     font-size: 16px;
-    width: 230px;
+    width: 235px;
     height: 50px;
     padding-left: 20px;
     padding-top: 4px;
@@ -122,7 +125,7 @@ input::placeholder {
     transition: text-indent 0.5s ease;
 }
 
-#enter-Account:hover {
+#create-Account:hover {
     text-indent: 125px;
 }
 
@@ -134,11 +137,10 @@ input::placeholder {
     color: #757575;
     font-weight: bold;
     font-size: 16px;
-    width: 475px;
+    width: 235px;
     height: 50px;
-    margin-top: 80px;
     padding-left: 20px;
-    padding-top: 4px;
+    padding-top: 5px;
     border-radius: 35px;
     border: solid 4px var(--green);
     transition: background-color 0.3s, box-shadow 0.3s;
