@@ -110,6 +110,8 @@ img {
         font-weight: bold;
         margin-top: 315px;
         margin-left: 50px;
+        text-decoration: none;
+        color: #F5F5F7;
     }
 
     .grid5 {
