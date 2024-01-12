@@ -99,7 +99,7 @@
                 <button type="button" class="login-with-google-btn" onclick="googleBtn()">
                     Continue with Google
                 </button>
-                <button id="create-Account" onclick="udTest()">CREATE</button>
+                <button id="create-Account">CREATE</button>
             </div>
         </div>
     {% else %}
@@ -111,16 +111,11 @@
             <div id="verification">
                 We have sent you a verification email, check your inbox and follow the instructions there to proceed.
                 <div id="sendagain">
-                <h1 id="noemail" class="italic">NO EMAIL?</h1>
-                <button id="create-Account" onclick="">SEND AGAIN</button>
+                    <h1 id="noemail" class="italic">NO EMAIL?</h1>
+                    <button id="create-Account" onclick="">SEND AGAIN</button>
+                </div>
             </div>
-            </div>
-
-
-
-
         </div>
-
     {% endif %}
 </main>
 

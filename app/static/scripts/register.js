@@ -1,10 +1,12 @@
 
-$("#sendRegister").click(()=> {
+$("#create-Account").click(()=> {
   console.log("dsd");
   let body = ({
-    email: $("#email").val(),
-    password: sha1($("#password").val()),
-    username: $("#username").val()
+    email: $("#userEmail").val(),
+    password: sha1($("#userPassword").val()),
+    username: $("#userHandle").val(),
+    name: $("#userName").val(),
+    surname: $("#userSurname").val(),
   })
   sendReq("post", null, body, (result => {
     console.log(result);
