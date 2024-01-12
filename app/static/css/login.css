@@ -89,7 +89,7 @@ input::placeholder {
 #forgot {
   color: var(--green);
   font-weight: bold;
-  font-size: 16;
+  font-size: 16px;
   margin-right: 20px;
 }
 

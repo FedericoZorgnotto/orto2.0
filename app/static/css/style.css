@@ -16,8 +16,8 @@ footer h3 {
 /* --- Font --- */
 @font-face {
   font-family: 'Roboto Mono', monospace;
-  src: url(css/fonts/RobotoMono-VariableFont_wght.ttf);
-  src: url(css/fonts/RobotoMono-Italic-VariableFont_wght.ttf); 
+  src: url(../fonts/RobotoMono-Italic-VariableFont_wght.ttf);
+  src: url(../fonts/RobotoMono-VariableFont_wght.ttf);
 }
 
 html {
