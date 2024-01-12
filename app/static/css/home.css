@@ -3,6 +3,31 @@ body {
     width: 100%;
 }
 
+
+main {
+    display: flex;
+    align-content: space-between;
+    width: 100%;
+    height: 500%;
+    gap: 50px;
+}
+
+#divsx {
+    border: black 1px solid;
+    width: 100%;
+}
+
+#divdx {
+    border: black 1px solid;
+    width: 100%;
+}
+
+
+.ontop {
+    z-index: 9999;
+}
+
+
 footer h3 {
     position: absolute;
     right: 5%;
@@ -260,6 +285,6 @@ footer h3 {
         grid-template-columns: repeat(2, 500px);
         grid-auto-rows: minmax(200px, auto);
         grid-gap: 50px;
-/*non capisco perche ma non va un tubo, qui io pensavo di mettere un display flex e un flex wrap:wrap; in modo che vadano tutti uno sotto l'altro*/
+        /*non capisco perche ma non va un tubo, qui io pensavo di mettere un display flex e un flex wrap:wrap; in modo che vadano tutti uno sotto l'altro*/
     }
 }

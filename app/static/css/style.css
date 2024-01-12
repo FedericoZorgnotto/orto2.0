@@ -1,0 +1,43 @@
+:root {
+    --green: #44653B;
+    --white: #F5F5F7;
+    --dark: #2D4028;
+
+}
+
+
+footer h3 {
+  color: var(--green);
+  position: fixed;
+  right: 12.7%;
+  bottom: 0%;
+}
+
+/* --- Font --- */
+@font-face {
+  font-family: 'Roboto Mono', monospace;
+  src: url(css/fonts/RobotoMono-VariableFont_wght.ttf);
+  src: url(css/fonts/RobotoMono-Italic-VariableFont_wght.ttf); 
+}
+
+html {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.floating-Text {
+  color: var(--green);
+  position: absolute;
+  z-index: 99;
+  font-size: 24px;
+  margin-left: -59.5%;
+  margin-top: 325px;
+}
+/* ------------ */
+
+body::-webkit-scrollbar {
+  display: none;
+}
