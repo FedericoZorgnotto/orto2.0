@@ -172,9 +172,14 @@ input::placeholder {
     text-align: left;
 }
 
-#validation-Buttons {
+
+#sendagain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-top: 240px;
 }
+
 
 #noemail {
     font-size: 26px;
