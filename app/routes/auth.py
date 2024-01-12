@@ -27,7 +27,9 @@ def register():
     else:
         user = User()
         return jsonify({'message': user.register(request.form['username'], request.form['email'],
-                                                 request.form['password'])})
+                                                 request.form['password'], request.form['username'],
+                                                 request.form['username'])})
+
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
@@ -43,7 +45,21 @@ def login():
         return render_template('auth/login.html')
     else:
         user = User()
-        if(request.form['username']):
+        if (request.form['username']):
             return jsonify({'message': user.login(request.form['password'], username=request.form['username'])})
         else:
             return jsonify({'message': user.login(request.form['password'], mail=request.form['email'])})
+
+
+@auth_bp.route('/verify/<codice_verifica>')
+def verify(codice_verifica):
+    """
+    params: codice_verifica
+    casi:
+    - andato a buon fine -> return success code, url home
+    - codice_verifica non esistente -> return error code (verification code not found)
+    - errore interno -> return error code (internal error)
+    """
+    user = User()
+    return jsonify({'message': user.verify(codice_verifica)})
+    pass
