@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    text-align: center;
+    margin-top: 5%;
+}
+
+img {
+    width: 5%;
+    margin-top: 1%;
+}
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    color: #44653B;
+    font-size: 3em;
+}
+
+p {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+    color: #44653B;
+    font-size: 1.5em;
+}
+
+.italic {
+    font-style: italic;
+}
