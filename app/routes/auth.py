@@ -23,7 +23,7 @@ def register():
     - errore interno -> return error code (internal error)
     """
     if request.method == 'GET':
-        return render_template('auth/register.html')
+        return render_template('auth/signup.html')
     else:
         user = User()
         return jsonify({'message': user.register(request.form['username'], request.form['email'],
