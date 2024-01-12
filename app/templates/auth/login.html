@@ -5,18 +5,87 @@
     <title>Title</title>
 
     <script src="{{ url_for('static', filename='scripts/importLib.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
 </head>
 <body>
-<h2>Login</h2>
-{% if error %}
-    <p style="color: red;">{{ error }}</p>
-{% endif %}
-<form method="post" action="{{ url_for('auth.login') }}">
-    <label for="username">Username:</label>
-    <input type="text" name="username" required><br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" required><br>
-    <input type="submit" value="Login">
-</form>
+<header>
+    <nav>
+        <div class="header-left">
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a href="trade.html">TRADE</a>
+            </div>
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a href="purchase.html">PURCHASE</a>
+            </div>
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a href="learn.html">LEARN</a>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a id="home" href="index.html">HOME</a>
+            </div>
+            <div class="account">
+                <div class="selector">
+                    <div class="ball-Pointer"></div>
+                    <a class="noMargin" href="signup.html">SIGNUP</a>
+                </div>
+                <div id="slash">/</div>
+                <div class="selector">
+                    <a class="noMargin" href="login.html" onclick="">LOGIN</a>
+                    <div class="visible-Ball-Pointer"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <h3 class="floating-Text">
+        Hi there, <span class="italic">log in</span><br>and start exploring :)
+    </h3>
+    <div id="card">
+        <h1>My account</h1>
+        <div class="user-Account">
+            <input type="email" id="userEmail" placeholder="EMAIL OR HANDLE"/>
+            <div class="negative-Feedback hide" id="emailError" onclick="createAccount()">
+                <div class="ball-Negative-Feedback"></div>
+                We didn't find anything, try to sing up
+            </div>
+        </div>
+        <div class="user-Account">
+            <input type="password" id="userPassword" placeholder="PASSWORD"/>
+            <div id="forgot-Btn">
+                <div class="negative-Feedback hide" id="passwordError">
+                    <div class="ball-Negative-Feedback"></div>
+                    Wrong one, nice try
+                </div>
+                <div id="forgot" onclick="forgotEmail()">Forgot?</div>
+            </div>
+        </div>
+        <div class=" user-Account">
+            <button type="button" class="login-with-google-btn" onclick="googleBtn()">
+                Continue with Google
+            </button>
+        </div>
+        <div id="validation-Button">
+            <button id="enter-Account" onclick="uaTest()">JOIN</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <h3>GARDEN 2.0 © 2023</h3>
+</footer>
+
+
 </body>
 </html>
