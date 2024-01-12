@@ -23,7 +23,7 @@ def register():
     - errore interno -> return error code (internal error)
     """
     if request.method == 'GET':
-        return render_template('auth/signup.html', codice=2)
+        return render_template('auth/signup.html', codice=1)
     else:
         user = User()
         messaggio = user.register(request.form['username'], request.form['email'], request.form['password'], request.form["username"], request.form["username"])
