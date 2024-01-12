@@ -23,12 +23,14 @@ def register():
     - errore interno -> return error code (internal error)
     """
     if request.method == 'GET':
-        return render_template('auth/signup.html')
+        return render_template('auth/signup.html', codice=2)
     else:
         user = User()
-        return jsonify({'message': user.register(request.form['username'], request.form['email'],
-                                                 request.form['password'], request.form['username'],
-                                                 request.form['username'])})
+        messaggio = user.register(request.form['username'], request.form['email'], request.form['password'], request.form["username"], request.form["username"])
+        if messaggio != "successo":
+            return jsonify({'message': messaggio})
+        else:
+            return render_template('auth/signup.html', codice=2)
 
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
@@ -49,17 +51,3 @@ def login():
             return jsonify({'message': user.login(request.form['password'], username=request.form['username'])})
         else:
             return jsonify({'message': user.login(request.form['password'], mail=request.form['email'])})
-
-
-@auth_bp.route('/verify/<codice_verifica>')
-def verify(codice_verifica):
-    """
-    params: codice_verifica
-    casi:
-    - andato a buon fine -> return success code, url home
-    - codice_verifica non esistente -> return error code (verification code not found)
-    - errore interno -> return error code (internal error)
-    """
-    user = User()
-    return jsonify({'message': user.verify(codice_verifica)})
-    pass

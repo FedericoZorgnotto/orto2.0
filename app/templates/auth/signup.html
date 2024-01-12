@@ -51,55 +51,77 @@
 </header>
 
 <main>
-    <h3 class="floating-Text">
-        Hi there, <span class="italic">sign up</span><br>and start exploring :)
-    </h3>
-    <div id="card">
-        <h1>New account</h1>
-        <div id="user-Info">
-            <div>
-                <input type="text" id="userName" placeholder="NAME"/>
-                <div class="negative-Feedback hide" id="nameError">
-                    <div class="ball-Negative-Feedback"></div>
-                    Add your name
+    {% if codice == 1 %}
+
+        <h3 class="floating-Text">
+            Hi there, <span class="italic">sign up</span><br>and start exploring :)
+        </h3>
+        <div id="card">
+            <h1>New account</h1>
+            <div id="user-Info">
+                <div>
+                    <input type="text" id="userName" placeholder="NAME"/>
+                    <div class="negative-Feedback hide" id="nameError">
+                        <div class="ball-Negative-Feedback"></div>
+                        Add your name
+                    </div>
+                </div>
+                <div>
+                    <input type="text" id="userSurname" placeholder="SURNAME"/>
+                    <div class="negative-Feedback hide" id="surnameError">
+                        <div class="ball-Negative-Feedback"></div>
+                        Add your surname
+                    </div>
                 </div>
             </div>
-            <div>
-                <input type="text" id="userSurname" placeholder="SURNAME"/>
-                <div class="negative-Feedback hide" id="surnameError">
+            <div class="user-Account" id="user-Account-Margin">
+                <input type="text" id="userHandle" placeholder="HANDLE"/>
+                <div class="negative-Feedback hide" id="handleError">
                     <div class="ball-Negative-Feedback"></div>
-                    Add your surname
+                    error
                 </div>
             </div>
-        </div>
-        <div class="user-Account" id="user-Account-Margin">
-            <input type="text" id="userHandle" placeholder="HANDLE"/>
-            <div class="negative-Feedback hide" id="handleError">
-                <div class="ball-Negative-Feedback"></div>
-                error
+            <div class="user-Account">
+                <input type="email" id="userEmail" placeholder="EMAIL"/>
+                <div class="negative-Feedback hide" id="emailError">
+                    <div class="ball-Negative-Feedback"></div>
+                    error
+                </div>
+            </div>
+            <div class="user-Account">
+                <input type="password" id="userPassword" placeholder="PASSWORD"/>
+                <div class="negative-Feedback hide" id="passwordError">
+                    <div class="ball-Negative-Feedback"></div>
+                    At least 8 characters, stay safe
+                </div>
+            </div>
+            <div id="validation-Buttons">
+                <button type="button" class="login-with-google-btn" onclick="googleBtn()">
+                    Continue with Google
+                </button>
+                <button id="create-Account" onclick="udTest()">CREATE</button>
             </div>
         </div>
-        <div class="user-Account">
-            <input type="email" id="userEmail" placeholder="EMAIL"/>
-            <div class="negative-Feedback hide" id="emailError">
-                <div class="ball-Negative-Feedback"></div>
-                error
+    {% else %}
+        <h3 class="floating-Text">
+            Hi there, <span class="italic">spam folder</span><br>common enemy ;)
+        </h3>
+        <div id="card">
+            <h1>Check your inbox</h1>
+            <div id="verification">
+                We have sent you a verification email, check your inbox and follow the instructions there to proceed.
+                <div id="validation-Buttons">
+                <h1 id="noemail" class="italic">NO EMAIL?</h1>
+                <button id="create-Account" onclick="">SEND AGAIN</button>
             </div>
-        </div>
-        <div class="user-Account">
-            <input type="password" id="userPassword" placeholder="PASSWORD"/>
-            <div class="negative-Feedback hide" id="passwordError">
-                <div class="ball-Negative-Feedback"></div>
-                At least 8 characters, stay safe
             </div>
+
+
+
+
         </div>
-        <div id="validation-Buttons">
-            <button type="button" class="login-with-google-btn" onclick="googleBtn()">
-                Continue with Google
-            </button>
-            <button id="create-Account" onclick="udTest()">CREATE</button>
-        </div>
-    </div>
+
+    {% endif %}
 </main>
 
 <footer>

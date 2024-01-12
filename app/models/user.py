@@ -53,9 +53,10 @@ class User:
                                                            '<body>'
                                                            '<h2>verifica la tua mail</h2>'
                                                            '<button href="' + url + '">verifica</button>'
-                                                                                    '<p>oppure copia e incolla questo link nel browser: ' + url + '</p>'
-                                                                                                                                                  '</body>'
-                                                                                                                                                  '</(html>')
+                                                                                    '<p>oppure copia e incolla questo '
+                                                                                    'link nel browser: ' + url + '</p>'
+                                                                                                                 '</body>'
+                                                                                                                 '</(html>')
 
             return 'successo'
         # except Exception as e:

@@ -126,7 +126,7 @@ input::placeholder {
 }
 
 #create-Account:hover {
-    text-indent: 125px;
+    text-indent: 120px;
 }
 
 /* ------------------- */
@@ -160,3 +160,23 @@ input::placeholder {
 }
 
 /* --------------------- */
+
+#verification {
+    border: #44653B solid 5px;
+    border-radius: 35px;
+    padding: 25px;
+    height: 500px;
+    color: #44653B;
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: left;
+}
+
+#validation-Buttons {
+    margin-top: 240px;
+}
+
+#noemail {
+    font-size: 26px;
+    margin-top: 10px;
+}
