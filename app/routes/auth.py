@@ -6,10 +6,7 @@ auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/')
 def index():
-    return ("<a href='/auth/login'>Login</a> "
-            "<br>"
-            " <a href='/auth/register'>Register</a>"
-            )
+    return redirect(url_for('auth.login'))
 
 
 @auth_bp.route('/register', methods=['GET', 'POST'])
