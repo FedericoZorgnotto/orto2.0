@@ -10,6 +10,8 @@ class User:
         self.surname = None
         self.username = None
         self.email = None
+        self.city = None
+        self.address = None
         self.password = None
         self.logged = False
         self.database = database(host="109.123.240.145", user="root", password="qP4yzK2Lyz6XcGk7B2E7Z", database="orto")
