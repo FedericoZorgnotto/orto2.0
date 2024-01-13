@@ -47,10 +47,8 @@ $("#create-Account").click(() => {
                 location.href = result.url;
             } else if (result.message == "utente già esistente") {
                 document.getElementById("handleError").innerText = "Already in use, sorry";
-                console.warn("utente già esistente");
             } else if (result.message == "mail già in uso") {
                 document.getElementById("emailError").innerText = "There is an other account connected";
-                console.warn("email già in uso");
             }
         }));
     }

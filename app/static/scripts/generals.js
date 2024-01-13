@@ -3,7 +3,6 @@ window.onload = () =>{
         location.reload();
     else{
         autoLogin();
-        console.log("load");
     }
 }
 function autoLogin(){
@@ -37,7 +36,6 @@ function login(username, password, callback){
         password: password
     }
     sendReq("post", "https://" + location.host + "/auth/login", body, (result)=>{
-        console.log(result);
         if(result.message == "successo"){
             localStorage.setItem("sessionUn", body.username);
             localStorage.setItem("sessionPwd", body.password);
@@ -52,7 +50,6 @@ function login(username, password, callback){
 }
 
 function sendReq(method ,url, body, callback){
-    console.log(url);
     switch (method){
         case "get":
             $.get((url == null) ? location.href : url,(result)=>{callback(result)});
