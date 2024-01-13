@@ -49,14 +49,16 @@ class User:
             url = url_for('auth.verify', codice_verifica=codice_verifica, _external=True)
 
             self.email_sender.invia_mail(email,
-                                         'verifica email', '<html>'
-                                                           '<body>'
-                                                           '<h2>verifica la tua mail</h2>'
-                                                           '<button href="' + url + '">verifica</button>'
-                                                                                    '<p>oppure copia e incolla questo '
-                                                                                    'link nel browser: ' + url + '</p>'
-                                                                                                                 '</body>'
-                                                                                                                 '</(html>')
+                                         'Verifica il tuo Account',
+                                        '<html>'
+                                            '<body>'
+                                                '<h2>Verifica il tuo Account</h2>'
+                                                '<a href=' + '"' + url + '"' + '>'
+                                                    '<button>Verifica</button>' 
+                                                '</a>'
+                                                '<p>Se il bottone non funziona, copia e incolla questo new tuo browser: ' + url + '</p>'
+                                            '</body>'
+                                        '</(html>')
 
             return 'successo'
         # except Exception as e:
