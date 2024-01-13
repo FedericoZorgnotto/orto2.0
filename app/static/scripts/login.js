@@ -10,8 +10,8 @@ $("#enter-Account").click(() => {
     }
 
     if ($("#userPassword").val() == "") {
-        document.getElementById("emailError").innerText = "Write something";
-        document.getElementById("emailError").classList.remove("hide");
+        document.getElementById("passwordError").innerText = "Write something";
+        document.getElementById("passwordError").classList.remove("hide");
         error = true;
     } else {
         document.getElementById("passwordError").classList.add("hide");
