@@ -45,9 +45,9 @@ def login():
     else:
         user = User()
         if (request.form['username']):
-            return jsonify({'message': user.login(request.json['password'], username=request.json['username'])})
+            return jsonify({'message': user.login(request.form['password'], username=request.form['username'])})
         else:
-            return jsonify({'message': user.login(request.json['password'], mail=request.json['email'])})
+            return jsonify({'message': user.login(request.form['password'], mail=request.form['email'])})
 
 
 @auth_bp.route('/verify/<codice_verifica>')
