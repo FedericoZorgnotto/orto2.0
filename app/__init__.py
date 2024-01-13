@@ -13,10 +13,12 @@ ssl_key_path = app.config.get('SSL_KEY_PATH', 'path/to/key.pem')
 
 from app.routes.home import home_bp
 from app.routes.auth import auth_bp
+from app.routes.products import products_bp
 from app.routes.wip import  wip_bp
 
 app.register_blueprint(home_bp)
 app.register_blueprint(auth_bp, url_prefix='/auth')
+app.register_blueprint(products_bp, url_prefix='/products')
 app.register_blueprint(wip_bp)
 @app.before_request
 def make_session_permanent():
