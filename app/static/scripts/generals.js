@@ -47,7 +47,7 @@ function login(username, password, callback){
         }else //aggiungere stampa errore
             logout();
         if(callback != null)
-            callback();
+            callback(result.message);
     });
 }
 
