@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WIP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/wip.css') }}">
+</head>
+<body>
+<header>
+    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Orto">
+</header>
+<main>
+    {% if verificationstatus == 1 %}
+        <h1>Your account has been <span class="italic">CORRECTLY</span> verified</h1>
+        <p>Now it's time to login: {{ url_for("auth.login", _external=True) }}</p>
+    {% elif verificationstatus == 2 %}
+        <h1>Your account has <span class="italic">ALREADY</span> been verified</h1>
+        <p>You can login on our website: {{ url_for("auth.login", _external=True) }}</p>
+    {% elif verificationstatus == 3 %}
+        <h1>Something went Worng this code doesn't exist</h1>
+    {% endif %}
+</main>
+
+</body>
+</html>

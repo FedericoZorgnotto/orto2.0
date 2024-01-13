@@ -1,7 +1,7 @@
 from app.services import database
 from app.services import email_sender
 import random
-from flask import url_for, request
+from flask import url_for, request, jsonify
 
 
 class User:
@@ -21,49 +21,49 @@ class User:
         return ''.join(random.choice("0123456789") for _ in range(6))
 
     def register(self, username, email, password, name, surname):
-        # try:
-        cursor = self.database.connection.cursor()
-        query = "SELECT * FROM auth WHERE username = %s OR email = %s"
-        data = (username, email)
-        cursor.execute(query, data)
+        try:
+            cursor = self.database.connection.cursor()
+            query = "SELECT * FROM auth WHERE username = %s OR email = %s"
+            data = (username, email)
+            cursor.execute(query, data)
 
-        if cursor.fetchone():
-            return 'utente già esistente'
-        else:
-            codice_verifica = self._generate_verification_code()
+            if cursor.fetchone():
+                return 'utente già esistente'
+            else:
+                codice_verifica = self._generate_verification_code()
 
-            query_auth = "INSERT INTO auth (username, email, password_hash) VALUES (%s, %s, %s);"
-            data_auth = (username, email, password)
-            cursor.execute(query_auth, data_auth)
+                query_auth = "INSERT INTO auth (username, email, password_hash) VALUES (%s, %s, %s);"
+                data_auth = (username, email, password)
+                cursor.execute(query_auth, data_auth)
 
-            cursor.execute("SELECT LAST_INSERT_ID();")
-            id_auth_appena_inserito = cursor.fetchone()[0]
+                cursor.execute("SELECT LAST_INSERT_ID();")
+                id_auth_appena_inserito = cursor.fetchone()[0]
 
-            query_users = "INSERT INTO users (id, nome, cognome, codice_verifica) VALUES (%s, %s, %s, %s);"
-            data_users = (id_auth_appena_inserito, name, surname, codice_verifica)
-            cursor.execute(query_users, data_users)
+                query_users = "INSERT INTO users (id, nome, cognome, codice_verifica) VALUES (%s, %s, %s, %s);"
+                data_users = (id_auth_appena_inserito, name, surname, codice_verifica)
+                cursor.execute(query_users, data_users)
 
-            # Esegui il commit delle modifiche
-            self.database.connection.commit()
+                # Esegui il commit delle modifiche
+                self.database.connection.commit()
 
-            url = url_for('auth.verify', codice_verifica=codice_verifica, _external=True)
+                url = url_for('auth.verify', codice_verifica=codice_verifica, _external=True)
 
-            self.email_sender.invia_mail(email,
-                                         'Verifica il tuo Account',
-                                        '<html>'
-                                            '<body>'
-                                                '<h2>Verifica il tuo Account</h2>'
-                                                '<a href=' + '"' + url + '"' + '>'
-                                                    '<button>Verifica</button>' 
-                                                '</a>'
-                                                '<p>Se il bottone non funziona, copia e incolla questo new tuo browser: ' + url + '</p>'
-                                            '</body>'
-                                        '</(html>')
+                self.email_sender.invia_mail(email,
+                                             'Verifica il tuo Account',
+                                            '<html>'
+                                                '<body>'
+                                                    '<h2>Verifica il tuo Account</h2>'
+                                                    '<a href=' + '"' + url + '"' + '>'
+                                                        '<button>Verifica</button>' 
+                                                    '</a>'
+                                                    '<p>Se il bottone non funziona, copia e incolla questo new tuo browser: ' + url + '</p>'
+                                                '</body>'
+                                            '</(html>')
 
-            return 'successo'
-        # except Exception as e:
-        #     print("errore durante la registrazione: ", e)
-        #     return 'errore interno'
+                return jsonify({"message":"successo", "url": url_for("auth.verification")})
+        except Exception as e:
+            print("errore durante la registrazione: ", e)
+            return jsonify({"message": "errore interno"})
 
     def login(self, password, username=None, mail=None):
         try:

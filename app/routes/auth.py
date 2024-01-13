@@ -26,11 +26,8 @@ def register():
         return render_template('auth/signup.html', codice=1)
     else:
         user = User()
-        messaggio = user.register(request.json['username'], request.json['email'], request.json['password'], request.json["username"], request.json["username"])
-        if messaggio != "successo":
-            return jsonify({'message': messaggio})
-        else:
-            return render_template('auth/signup.html', codice=2)
+        return user.register(request.form['username'], request.form['email'], request.form['password'],
+                             request.form["username"], request.form["username"])
 
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
@@ -51,3 +48,26 @@ def login():
             return jsonify({'message': user.login(request.json['password'], username=request.json['username'])})
         else:
             return jsonify({'message': user.login(request.json['password'], mail=request.json['email'])})
+
+
+@auth_bp.route('/verify/<codice_verifica>')
+def verify(codice_verifica):
+    """
+    params: codice_verifica
+    casi:
+    - andato a buon fine -> return success code, url home
+    - codice_verifica non esistente -> return error code (verification code not found)
+    - errore interno -> return error code (internal error)
+    """
+    user = User()
+    code = 0
+    if user.verify(codice_verifica) == "successo":
+        code = 1
+    else:
+        code = 3
+    return render_template("auth/codeverification.html", verificationstatus=code)
+
+
+@auth_bp.route("/verification")
+def verification():
+    return render_template("auth/verification.html")
