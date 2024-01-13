@@ -26,7 +26,7 @@ def register():
         return render_template('auth/signup.html', codice=1)
     else:
         user = User()
-        messaggio = user.register(request.form['username'], request.form['email'], request.form['password'], request.form["username"], request.form["username"])
+        messaggio = user.register(request.json['username'], request.json['email'], request.json['password'], request.json["username"], request.json["username"])
         if messaggio != "successo":
             return jsonify({'message': messaggio})
         else:
@@ -48,6 +48,6 @@ def login():
     else:
         user = User()
         if (request.form['username']):
-            return jsonify({'message': user.login(request.form['password'], username=request.form['username'])})
+            return jsonify({'message': user.login(request.json['password'], username=request.json['username'])})
         else:
-            return jsonify({'message': user.login(request.form['password'], mail=request.form['email'])})
+            return jsonify({'message': user.login(request.json['password'], mail=request.json['email'])})
