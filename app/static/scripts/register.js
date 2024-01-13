@@ -42,7 +42,6 @@ $("#create-Account").click(() => {
             surname: $("#userSurname").val(),
         })
         sendReq("post", null, body, (result => {
-            console.log(result);
             if (result.message == "successo") {
                 location.href = result.url;
             } else if (result.message == "utente già esistente") {

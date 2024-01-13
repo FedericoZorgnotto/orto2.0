@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, session, url_fo
 wip_bp = Blueprint('wip', __name__)
 
 
-@wip_bp.route('/wip')
-def wip():
+@wip_bp.route('/')
+def index():
     return render_template('wip.html')
 

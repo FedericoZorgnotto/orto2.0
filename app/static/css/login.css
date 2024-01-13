@@ -94,6 +94,10 @@ input::placeholder {
     margin-right: 20px;
 }
 
+a {
+     text-decoration: none;
+}
+
 #forgot-Btn {
     display: flex;
     justify-content: space-between;
@@ -108,7 +112,7 @@ input::placeholder {
 
 #enter-Account {
     color: var(--white);
-    background-color: var(--green);
+    background-color: orange;
     font-weight: bold;
     font-style: italic;
     font-size: 16px;

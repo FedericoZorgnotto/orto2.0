@@ -1,118 +1,130 @@
 /* --- Nav Links --- */
 nav {
-  color: var(--white);
-  display:flex;
-  justify-content: space-between;    
-  margin-top: 30px;
-  margin-left: 11%;
-  margin-right: 11%;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 11%;
+    margin-right: 11%;
 }
 
-nav a, #about{
-  color: var(--white);
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-  margin-right: 34px;
+nav a, #about {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 34px;
+}
+
+a:hover {
+    color: var(--green);
 }
 
 header {
-  text-align: center;  
+    text-align: center;
 }
 
 .header-left {
-  display: flex;
-  justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .header-right {
-  display: flex;
-  justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .account {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #about, #home {
-  margin-right: 75px;  
+    margin-right: 75px;
 }
 
 .noMargin {
-  margin-right: 0px;
-  margin-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 #slash {
-  color: var(--white);
-  font-size: 22px;
-  font-weight: bold;
-  margin-left: 5px;
-  margin-right: 5px;
+    color: var(--white);
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
 }
+
 /* ----------------- */
 
 
 /* --- Pointer --- */
 .selector {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
-.ball-Pointer {    
-  background-color: var(--white);
-  width: 16px;
-  height: 16px;
-  border-radius: 100%;
-  margin-right: 5px;
-  margin-left: 5px;
-  transform: scale(0);
-  transition: transform 0.5s;
+.ball-Pointer {
+    background-color: var(--white);
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    margin-right: 5px;
+    margin-left: 5px;
+    transform: scale(0);
+    transition: transform 0.5s;
 }
 
 .visible-Ball-Pointer {
-  background-color: var(--white);
-  width: 16px;
-  height: 16px;
-  border-radius: 100%;
-  margin-right: 5px;  
-  margin-left: 5px;
+    background-color: var(--white);
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .selector:hover .ball-Pointer {
-  transform: scale(1);
-  animation: bounce 0.5s;
+    transform: scale(1);
+    animation: bounce 0.5s;
 }
 
 @keyframes bounce {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
+
 /* --------------- */
 
 
 /* --- Search Bar --- */
 .search-Bar {
-  color: var(--green);
-  background-color: var(--white);
-  border: solid 5px var(--green);
-  border-radius: 35px;
-  text-align: center;;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px;
-  width: 73.5%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+    color: var(--green);
+    background-color: var(--white);
+    border: solid 5px var(--green);
+    border-radius: 35px;
+    text-align: center;;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    width: 73.5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .search-Bar::placeholder {
-  color: var(--green);
-  font-size: 16px;
-  font-weight: bold;
+    color: var(--green);
+    font-size: 16px;
+    font-weight: bold;
 }
 
 
@@ -120,28 +132,29 @@ header {
 
 
 /* --- Text & Button --- */
-.user-Interactions{
-  color: var(--green);
-  margin-left: 12.5%;
-  margin-right: 12.5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-style: italic;
-  font-size: 18px;
+.user-Interactions {
+    color: var(--green);
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
+    font-size: 18px;
 }
 
 .upload-Something {
-  color: var(--white);
-  background-color: var(--green);
-  font-style: italic;
-  font-weight: bold;
-  font-size: 16px;  
-  width: 200px;
-  height: 50px;
-  padding-top: 5px;
-  border-radius: 35px;
-  border: none;
-  text-align: center;
+    color: var(--white);
+    background-color: var(--green);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 16px;
+    width: 200px;
+    height: 50px;
+    padding-top: 5px;
+    border-radius: 35px;
+    border: none;
+    text-align: center;
 }
+
 /* --------------------- */

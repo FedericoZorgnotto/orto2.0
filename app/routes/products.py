@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, request, redirect, session, url_for, jsonify
-wip_bp = Blueprint('products_bp', __name__)
+
+products_bp = Blueprint('products', __name__)
 
 
-@wip_bp.route('/products_bp')
-def products_bp():
-    pass
+@products_bp.route('/')
+def index():
+    return "gaga"
