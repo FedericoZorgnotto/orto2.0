@@ -1,6 +1,7 @@
 from app.services import database
 from flask import url_for, request, jsonify
 
+
 class Product:
     def __init__(self):
         self.database = database(host="109.123.240.145", user="root", password="qP4yzK2Lyz6XcGk7B2E7Z", database="orto")
@@ -32,9 +33,10 @@ class Product:
         result = cursor.fetchall()
         return jsonify(result)
 
-    def add_picture(self, id, base64):
+    def add_picture(self, id, base64, main):
         cursor = self.database.connection.cursor()
-        cursor.execute("INSERT INTO images (id_prodotto, immagine_base64) VALUES (%s, %s)", (id, base64,))
+        cursor.execute("INSERT INTO images (id_prodotto, immagine_base64, principale) VALUES (%s, %s, %s)",
+                       (id, base64, main,))
         self.database.connection.commit()
         return True
 
@@ -50,8 +52,16 @@ class Product:
         self.database.connection.commit()
         return True
 
-    def add(self, id_vendor, nome, descrizione, prezzo, quantita):
+    def add(self, id_vendor, name, description, price, quantity, publication_date):
         cursor = self.database.connection.cursor()
-        cursor.execute("INSERT INTO products (id_venditore, nome, descrizione, costo, quantita) VALUES (%s, %s, %s, %s, %s)", (id_vendor, nome, descrizione, prezzo, quantita,))
+        cursor.execute(
+            "INSERT INTO products (id_venditore, nome, descrizione, costo, quantita, data_publicazione) VALUES (%s, %s, %s, %s, %s, %s)",
+            (id_vendor, name, description, price, quantity, publication_date))
+        self.database.connection.commit()
+        return True
+
+    def remove(self, id_vendor, id):
+        cursor = self.database.connection.cursor()
+        cursor.execute("DELETE FROM products WHERE id = %s AND id_venditore = %s", (id, id_vendor,))
         self.database.connection.commit()
         return True

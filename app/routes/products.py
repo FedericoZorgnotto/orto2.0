@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, session, url_for, jsonify
-
+from app.models import Product
 products_bp = Blueprint('products', __name__)
 
 
@@ -11,10 +11,14 @@ def index():
 @products_bp.route('/sell', methods=['GET', 'POST'])
 def sell():
     if request.method == 'GET':
-        return render_template('products/sell.html')
+        return render_template('products/add.html')
     else:
-        return jsonify({'message': 'ok'})
-
+        product = Product()
+        return jsonify(product.add(request.form["id_vendor"], request.form['name'], request.form['description'], request.form['price'], request.form['quantity']))
+@products_bp.route('/remove', methods=['POST'])
+def remove():
+    product = Product()
+    return jsonify(product.remove(request.form["id_vendor"], request.form['id_product']))
 
 @products_bp.route('/research', methods=['GET', 'POST'])
 def research():
@@ -28,4 +32,20 @@ def research():
     if request.method == 'GET':
         return render_template('products/research.html')
     else:
-        return jsonify({'message': 'ok'})
+        product = Product()
+        return jsonify(product.get_list(int(request.form['offset']), int(request.form['limit'])))
+
+@products_bp.route('/addImage', methods=['POST'])
+def addImage():
+    product = Product()
+    return jsonify(product.add_picture(request.form['base64'], request.form['id_product'], request.form['main']))
+
+@products_bp.route('/getImages', methods=['POST'])
+def getImages():
+    product = Product()
+    return jsonify(product.get_pictures(request.form['id_product']))
+
+@products_bp.route('/removeImage', methods=['POST'])
+def removeImage():
+    product = Product()
+    return jsonify(product.remove_picture(request.form['id_image']))
