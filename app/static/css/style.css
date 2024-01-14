@@ -9,7 +9,7 @@ footer h3 {
   color: var(--green);
   position: fixed;
   right: 12.7%;
-  bottom: 0%;
+  bottom: 0;
   font-size: 20px;
 }
 

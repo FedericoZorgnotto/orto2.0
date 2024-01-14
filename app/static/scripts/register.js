@@ -44,6 +44,11 @@ $(document).ready(() => {
             startLoaderAnimation();
             sendReq("post", null, body, (result => {
                 console.log(result);
+
+
+
+
+                /*
                 if (result == "successo") {
                     location.href = result.url;
                     stopLoaderAnimation();
@@ -58,6 +63,8 @@ $(document).ready(() => {
                     document.getElementById("emailError").classList.remove("hide");
                     stopLoaderAnimation();
                 }
+
+                 */
             }));
         }
     });
