@@ -1,5 +1,6 @@
 window.onload = () => {
     autoLogin();
+    //stopLoaderAnimation();
 }
 
 function autoLogin() {
@@ -68,4 +69,12 @@ function sendReq(method, url, body, callback) {
         default:
             return "UNKNOWN METHOD";
     }
+}
+
+function startLoaderAnimation(){
+
+}
+
+function stopLoaderAnimation(){
+    $("#loader").hide();
 }
