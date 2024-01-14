@@ -167,11 +167,12 @@ input::placeholder {
     border: #44653B solid 5px;
     border-radius: 35px;
     padding: 25px;
-    height: 500px;
+    height: 460px;
     color: #44653B;
     font-size: 24px;
     font-weight: bolder;
     text-align: left;
+    margin-top: -10px;
 }
 
 
@@ -179,11 +180,33 @@ input::placeholder {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 240px;
+    margin-top: 290px;
 }
 
 
 #noemail {
     font-size: 26px;
     margin-top: 10px;
+}
+
+#new-mail {
+    color: var(--white);
+    background-color: var(--green);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    width: 235px;
+    height: 50px;
+    padding-left: 20px;
+    padding-top: 4px;
+    border-radius: 35px;
+    border: none;
+    text-align: left;
+    transition: text-indent 0.5s ease;
+}
+
+
+#new-mail:hover {
+    text-indent: 90px;
+    cursor: pointer;
 }
