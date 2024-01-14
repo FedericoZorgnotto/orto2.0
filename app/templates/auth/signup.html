@@ -80,15 +80,17 @@
             <input type="text" id="userHandle" placeholder="HANDLE"/>
             <div class="negative-Feedback hide" id="handleError">
                 <div class="ball-Negative-Feedback"></div>
-                Add your Handle
+                <span id="handleErrorSpan">Add your Handle</span>
             </div>
         </div>
         <div class="user-Account">
             <input type="email" id="userEmail" placeholder="EMAIL"/>
-            <div class="negative-Feedback hide" id="emailError">
-                <div class="ball-Negative-Feedback"></div>
-                Add your Email
-            </div>
+            <a id="trylogin">
+                <div class="negative-Feedback hide" id="emailError">
+                    <div class="ball-Negative-Feedback"></div>
+                    <span id="emaiErrorSpan">Add your Email</span>
+                </div>
+            </a>
         </div>
         <div class="user-Account">
             <input type="password" id="userPassword" placeholder="PASSWORD"/>

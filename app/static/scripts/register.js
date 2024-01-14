@@ -48,11 +48,13 @@ $(document).ready(() => {
                     location.href = result.url;
                     stopLoaderAnimation();
                 } else if (result == "utente già esistente") {
-                    document.getElementById("handleError").innerText = "Already in use, sorry";
+                    document.getElementById("handleErrorSpan").innerText = "Already in use, sorry";
                     document.getElementById("handleError").classList.remove("hide");
                     stopLoaderAnimation();
-                } else if (result == "mail già in uso") {
-                    document.getElementById("emailError").innerText = "There is an other account connected";
+                } else (result == "email già esistente")
+                {
+                    document.getElementById("emaiErrorSpan").innerText = "An account is already connected, try to sign up";
+                    document.getElementById("trylogin").href = "/auth/login";
                     document.getElementById("emailError").classList.remove("hide");
                     stopLoaderAnimation();
                 }
