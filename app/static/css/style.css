@@ -59,7 +59,7 @@ body::-webkit-scrollbar {
   bottom: 0;
   display: flex;
   justify-content: center;
-  padding-bottom: 10%;
+  padding-bottom: 13%;
   align-items: center;
   background-color: rgba(240, 240, 240, 0.8); /* Sfondo traslucido */
   z-index: 9999; /* Valore elevato per posizionare il loader sopra gli altri elementi */

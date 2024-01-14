@@ -34,7 +34,6 @@ $(document).ready(() => {
         }
 
         if (!error) {
-            console.log("tutto corretto")
             let body = ({
                 email: $("#userEmail").val(),
                 password: sha1($("#userPassword").val()),
@@ -44,13 +43,18 @@ $(document).ready(() => {
             })
             startLoaderAnimation();
             sendReq("post", null, body, (result => {
-                if (result.message == "successo") {
+                console.log(result);
+                if (result == "successo") {
                     location.href = result.url;
                     stopLoaderAnimation();
-                } else if (result.message == "utente già esistente") {
+                } else if (result == "utente già esistente") {
                     document.getElementById("handleError").innerText = "Already in use, sorry";
-                } else if (result.message == "mail già in uso") {
+                    document.getElementById("handleError").classList.remove("hide");
+                    stopLoaderAnimation();
+                } else if (result == "mail già in uso") {
                     document.getElementById("emailError").innerText = "There is an other account connected";
+                    document.getElementById("emailError").classList.remove("hide");
+                    stopLoaderAnimation();
                 }
             }));
         }
