@@ -51,41 +51,42 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-    #loader {
-      position: fixed; /* Posiziona il loader in modo fisso rispetto alla finestra */
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(240, 240, 240, 0.8); /* Sfondo traslucido */
-      z-index: 9999; /* Valore elevato per posizionare il loader sopra gli altri elementi */
-    }
+#loader {
+  position: fixed; /* Posiziona il loader in modo fisso rispetto alla finestra */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(240, 240, 240, 0.8); /* Sfondo traslucido */
+  z-index: 9999; /* Valore elevato per posizionare il loader sopra gli altri elementi */
+}
 
-    /* Immagine del loader */
-    #loader img {
-      width: 100px;
-      height: 100px;
-      animation: pulse 1s infinite;
-    }
+/* Immagine del loader */
+#loader img {
+  width: 100px;
+  height: 100px;
+  animation: pulse 1s infinite;
+  margin: auto;
+}
 
-    /* Animazione di pulsazione */
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
+/* Animazione di pulsazione */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
-    /* Stile degli altri elementi */
-    * not #loader {
-      position: relative;
-      z-index: 1; /* Valore inferiore rispetto al loader */
-    }
+/* Stile degli altri elementi */
+* not #loader {
+  position: relative;
+  z-index: 1; /* Valore inferiore rispetto al loader */
+}

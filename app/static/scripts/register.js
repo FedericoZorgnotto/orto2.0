@@ -1,4 +1,4 @@
-$(document).ready(()=>{
+$(document).ready(() => {
     $("#create-Account").click(() => {
         let error = false;
 
@@ -52,6 +52,5 @@ $(document).ready(()=>{
                 }
             }));
         }
-
     });
 })

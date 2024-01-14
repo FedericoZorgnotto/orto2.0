@@ -7,18 +7,17 @@ function autoLogin() {
     if (localStorage.getItem("sessionPwd") != "null" && localStorage.getItem("sessionUn") != "null") {
         login(localStorage.getItem("sessionUn"), localStorage.getItem("sessionPwd"), (result) => {
 
-        if (result.message == "successo") {
-            localStorage.setItem("sessionUn", body.username);
-            localStorage.setItem("sessionPwd", body.password);
-            $("#loginBtn").hide();
-            $("#profileMenu").show();
-            $("#username").text(body.username);
-        } else if (result.message == "password errata") {
+            if (result.message == "successo") {
+                localStorage.setItem("sessionUn", body.username);
+                localStorage.setItem("sessionPwd", body.password);
+                $("#loginBtn").hide();
+                $("#profileMenu").show();
+                $("#username").text(body.username);
+            } else if (result.message == "password errata") {
 
-        } else if (result.message == "utente non trovato") {
+            } else if (result.message == "utente non trovato") {
 
-        } else
-            logout();
+            } else logout();
 
         });
     }
@@ -46,8 +45,7 @@ function criptLogin(username, password, callback) {
 
 function login(username, password, callback) {
     body = {
-        username: username,
-        password: password
+        username: username, password: password
     }
     sendReq("post", "https://" + location.host + "/auth/login", body, (result) => {
         callback(result.message);

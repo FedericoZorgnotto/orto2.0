@@ -1,4 +1,4 @@
-$(document).ready(()=>{
+$(document).ready(() => {
     $("#enter-Account").click(() => {
         let error = false;
 
@@ -19,23 +19,19 @@ $(document).ready(()=>{
         }
 
         if (!error) {
-            criptLogin($("#userEmail").val(), $("#userPassword").val(), (result) => {
-                if (result.message == "successo") {
+            criptLogin($("#userEmail").val(), $("#userPassword").val(), (message) => {
+                if (message == "successo") {
                     localStorage.setItem("sessionUn", body.username);
                     localStorage.setItem("sessionPwd", body.password);
-                } else if (result.message == "password errata") {
-                    document.getElementById("passwordError").classList.remove("hide");
-                } else if (result.message == "utente non trovato") {
+                } else if (message == 'utente non trovato') {
+                    document.getElementById("emailError").innerText = "We didn't find anything, try to sing up";
+                    document.getElementById("trysignup").href = "/auth/register";
                     document.getElementById("emailError").classList.remove("hide");
+                } else if (message == "password errata") {
+                    document.getElementById("passwordError").innerText = "Wrong one, nice try";
+                    document.getElementById("passwordError").classList.remove("hide");
                 }
             });
         }
     });
-})
-
-/*
-    implementare l'add per riempire il database, fare richesta impost allo stesso indirizzo come request form, forse no risposte
-    add picture non va
-    passare id, name, description, price, quantity l'id è quello dell' id_vendor
-
- */
+});
