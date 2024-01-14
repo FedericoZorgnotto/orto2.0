@@ -1,6 +1,5 @@
 window.onload = () => {
     autoLogin();
-
 }
 
 function autoLogin() {
