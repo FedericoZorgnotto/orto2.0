@@ -1,4 +1,5 @@
 $("#create-Account").click(() => {
+    console.log("gaga");
     let error = false;
 
     if ($("#userName").val() == "") {
@@ -51,8 +52,4 @@ $("#create-Account").click(() => {
             }
         }));
     }
-
 });
-
-function a() {
-}
