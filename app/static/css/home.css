@@ -3,6 +3,10 @@ body {
     width: 100%;
 }
 
+a{
+    text-decoration: none;
+    color: #F5F5F7;
+}
 
 #centro {
     display: flex;
