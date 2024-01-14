@@ -63,7 +63,9 @@
             We have sent you a verification email, check your inbox and follow the instructions there to proceed.
             <div id="sendagain">
                 <h1 id="noemail" class="italic">NO EMAIL?</h1>
-                <button id="create-Account" onclick="">SEND AGAIN</button>
+                <a href="{{ url_for("wip.index") }}">
+                    <button id="new-mail" onclick="">SEND AGAIN</button>
+                </a>
             </div>
         </div>
     </div>
