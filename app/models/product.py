@@ -54,9 +54,11 @@ class Product:
 
     def add(self, id_vendor, name, description, price, quantity, publication_date):
         cursor = self.database.connection.cursor()
+        cursor.execute("SELECT LAST_INSERT_ID();")
+        id_element = cursor.fetchone()[0]
         cursor.execute(
-            "INSERT INTO products (id_venditore, nome, descrizione, costo, quantita, data_publicazione) VALUES (%s, %s, %s, %s, %s, %s)",
-            (id_vendor, name, description, price, quantity, publication_date))
+            "INSERT INTO products (id, id_venditore, nome, descrizione, costo, quantita, data_pubblicazione) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+            (id_element, id_vendor, name, description, price, quantity, publication_date))
         self.database.connection.commit()
         return True
 

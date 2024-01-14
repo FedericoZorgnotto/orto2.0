@@ -9,14 +9,14 @@ def index():
     return redirect(url_for('products.research'))
 
 
-@products_bp.route('/sell', methods=['GET', 'POST'])
-def sell():
+@products_bp.route('/add', methods=['GET', 'POST'])
+def add():
     if request.method == 'GET':
         return render_template('products/add.html')
     else:
         product = Product()
         return jsonify(product.add(request.form["id_vendor"], request.form['name'], request.form['description'],
-                                   request.form['price'], request.form['quantity']))
+                                   request.form['price'], request.form['quantity'], request.form['publication_date']))
 
 
 @products_bp.route('/remove', methods=['POST'])
