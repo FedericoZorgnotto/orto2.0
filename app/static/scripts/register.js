@@ -42,9 +42,11 @@ $(document).ready(() => {
                 name: $("#userName").val(),
                 surname: $("#userSurname").val(),
             })
+            startLoaderAnimation();
             sendReq("post", null, body, (result => {
                 if (result.message == "successo") {
                     location.href = result.url;
+                    stopLoaderAnimation();
                 } else if (result.message == "utente già esistente") {
                     document.getElementById("handleError").innerText = "Already in use, sorry";
                 } else if (result.message == "mail già in uso") {

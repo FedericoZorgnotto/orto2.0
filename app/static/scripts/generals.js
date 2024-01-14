@@ -70,9 +70,15 @@ function sendReq(method, url, body, callback) {
 }
 
 function startLoaderAnimation(){
-
+    let main = document.getElementsByTagName("main")[0];
+    let div = document.createElement("div");
+    div.id = "loader";
+    let img = document.createElement("img");
+    img.src = "https://"+location.host+"/static/img/logo.png";
+    div.appendChild(img);
+    main.appendChild(div);
 }
 
 function stopLoaderAnimation(){
-    $("#loader").hide();
+    document.getElementById("loader").remove();
 }
