@@ -64,7 +64,9 @@
             <a id="trysignup">
                 <div class="negative-Feedback hide" id="emailError">
                     <div class="ball-Negative-Feedback"></div>
-                    We didn't find anything, try to sing up
+                    <span id="emailErrorSpan">
+                        Write something
+                    </span>
                 </div>
             </a>
         </div>
@@ -73,7 +75,7 @@
             <div id="forgot-Btn">
                 <div class="negative-Feedback hide" id="passwordError">
                     <div class="ball-Negative-Feedback"></div>
-                    Wrong one, nice try
+                    <span id="passwordErrorSpan">Write something</span>
                 </div>
                 <a href="{{ url_for("wip.index") }}">
                     <div id="forgot">Forgot?</div>
