@@ -30,7 +30,7 @@ class User:
             cursor.execute(query, data)
 
             if cursor.fetchone():
-                return 'utente già esistente'
+                return 'utente  già esistente'
             else:
                 codice_verifica = self._generate_verification_code()
 

@@ -54,8 +54,12 @@ class Product:
 
     def add(self, id_vendor, name, description, price, quantity, publication_date):
         cursor = self.database.connection.cursor()
-        cursor.execute("SELECT LAST_INSERT_ID();")
-        id_element = cursor.fetchone()[0]
+        cursor.execute("SELECT MAX(id) FROM products;")
+        if cursor.fetchone()[0] is not None:
+            id_element = cursor.fetchone()[0]+1
+        else:
+            id_element = 0
+        print(id_element)
         cursor.execute(
             "INSERT INTO products (id, id_venditore, nome, descrizione, costo, quantita, data_pubblicazione) VALUES (%s, %s, %s, %s, %s, %s, %s)",
             (id_element, id_vendor, name, description, price, quantity, publication_date))
