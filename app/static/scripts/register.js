@@ -45,26 +45,25 @@ $(document).ready(() => {
             sendReq("post", null, body, (result => {
                 console.log(result);
 
-
-
-
-                /*
-                if (result == "successo") {
+                if (result.message == "successo") {
                     location.href = result.url;
                     stopLoaderAnimation();
-                } else if (result == "utente già esistente") {
+                } else if (result.message == "utente già esistente") {
                     document.getElementById("handleErrorSpan").innerText = "Already in use, sorry";
                     document.getElementById("handleError").classList.remove("hide");
                     stopLoaderAnimation();
-                } else (result == "email già esistente")
+                } else if(result.message == "email già esistente")
                 {
                     document.getElementById("emaiErrorSpan").innerText = "An account is already connected, try to sign up";
                     document.getElementById("trylogin").href = "/auth/login";
                     document.getElementById("emailError").classList.remove("hide");
                     stopLoaderAnimation();
+                }else{
+                    stopLoaderAnimation();
+                    //TODO: gestire errore
                 }
 
-                 */
+
             }));
         }
     });
