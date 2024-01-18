@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | GARDEN 2.0</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact and negotiate directly with the seller">
+  <meta name="keywords" content="garden 2.0, GARDEN 2.0, garden2.0, GARDEN2.0, Contact, contact, negotiate, Negotiate">
+  <meta name="author" content="Audifreddi Pietro, Zorgnotto Federico">
+  <meta property="og:title" content="Contact | GARDEN 2.0" />
+  <meta property="og:description" content="Contact and negotiate directly with the seller" />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/transition.css" />
+  <link rel="stylesheet" href="css/contact.css">
+  <script src="js/contact.js"></script>
+
+</head>
+
+<body onload="init()">
+  <div class="transition transition-3 is-active"></div>
+  <header>
+    <nav>
+      <div class="header-left">
+        <div class="selector">
+          <div class="visible-Ball-Pointer"></div>
+          <a href="trade.html">TRADE</a>
+        </div>
+        <div class="selector">
+          <div class="ball-Pointer"></div>
+          <a href="purchase.html">PURCHASE</a>
+        </div>
+        <div class="selector">
+          <div class="ball-Pointer"></div>
+          <a href="learn.html">LEARN</a>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="selector">
+          <div class="ball-Pointer"></div>
+          <a id="hone" href="index.html">HOME</a>
+        </div>
+        <div class="account">
+          <div class="selector">
+            <div class="ball-Pointer"></div>
+            <a class="noMargin" href="signup.html">SIGNUP</a>
+          </div>
+          <div id="slash">/</div>
+          <div class="selector">
+            <a class="noMargin" href="login.html">LOGIN</a>
+            <div class="ball-Pointer"></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <input type="text" class="search-Bar" placeholder="Type here, we will find it for you">
+  </header>
+
+  <main>
+    <h3 id="floating-Text">
+      Any question<br>just ask the seller
+    </h3>
+    <div id="wrapper">
+      <div id="seller-Info">
+        <div class="user-Info">
+          <img id="image" class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
+          <div class="user-Score">
+            <h3 id="name"></h3>
+            <div class="stars">
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+            </div>
+          </div>
+        </div>
+        <div class="product-Info">
+          <h2 id="productName"></h2>
+          <h3 id="streat"></h3>
+          <h3>Quantity: <span class="italic" id="quantity"></span></h3>
+          <h1 id="bio">Biography:</h3>
+            <h3 id="user-Bio"></h3>
+        </div>
+      </div>
+      <div class="card">
+        <div id="container">
+          <h2>Chat with the seller</h2>
+          <div id="chat"></div>
+          <div id="interface">
+            <input id="messageContent"></input>
+            <button id="create-Post">SEND</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <h3>GARDEN 2.0 © 2023</h3>
+  </footer>
+
+</body>
+
+<script src="js/transition.js"></script>
+
+</html>

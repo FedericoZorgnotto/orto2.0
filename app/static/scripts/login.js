@@ -18,19 +18,20 @@ $(document).ready(() => {
 
         if (!error) {
             startLoaderAnimation();
-            criptLogin($("#userEmail").val(), $("#userPassword").val(), (message) => {
-                if (message == "successo") {
+            criptLogin($("#userEmail").val(), $("#userPassword").val(), (result) => {
+
+                if (result.message == "successo") {
                     localStorage.setItem("sessionUn", body.username);
                     localStorage.setItem("sessionPwd", body.password);
                     stopLoaderAnimation();
 
-                } else if (message == 'utente non trovato') {
+                } else if (result.message == 'utente non trovato') {
                     document.getElementById("emailErrorSpan").innerText = "We didn't find anything, try to sing up";
                     document.getElementById("trysignup").href = "/auth/register";
                     document.getElementById("emailError").classList.remove("hide");
                     stopLoaderAnimation();
 
-                } else if (message == "password errata") {
+                } else if (result.message == "password errata") {
                     document.getElementById("passwordErrorSpan").innerText = "Wrong one, nice try";
                     document.getElementById("passwordError").classList.remove("hide");
                     stopLoaderAnimation();

@@ -102,6 +102,10 @@ input::placeholder {
     margin-right: 5px;
 }
 
+a {
+    text-decoration: none;
+}
+
 #validation-Buttons {
     display: flex;
     flex-direction: row;

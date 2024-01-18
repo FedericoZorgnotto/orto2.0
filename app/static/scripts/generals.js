@@ -48,7 +48,7 @@ function login(username, password, callback) {
         username: username, password: password
     }
     sendReq("post", "https://" + location.host + "/auth/login", body, (result) => {
-        callback(result.message);
+        callback(result);
     });
 }
 
