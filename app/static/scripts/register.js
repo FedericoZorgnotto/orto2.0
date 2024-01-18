@@ -14,18 +14,29 @@ $(document).ready(() => {
         } else {
             document.getElementById("surnameError").classList.add("hide");
         }
-        if ($("#userHandle").val() == "") {
-            document.getElementById("handleError").classList.remove("hide");
+        if ($("#userUsername").val() == "") {
+            document.getElementById("usernameError").classList.remove("hide");
             error = true;
         } else {
-            document.getElementById("handleError").classList.add("hide");
+            document.getElementById("usernameError").classList.add("hide");
         }
+        let email = $("#userEmail").val();
+
+        if (email == "") {
+            document.getElementById("emaiErrorSpan").innerText = "Add your Email";
+        }
+
+
         if ($("#userEmail").val() == "") {
             document.getElementById("emailError").classList.remove("hide");
             error = true;
         } else {
             document.getElementById("emailError").classList.add("hide");
         }
+
+
+
+
         if (($("#userPassword").val()).length < 8) {
             document.getElementById("passwordError").classList.remove("hide");
             error = true

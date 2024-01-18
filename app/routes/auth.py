@@ -24,8 +24,10 @@ def register():
         return render_template('auth/signup.html', codice=1)
     else:
         user = User()
-        return user.register(request.form['username'], request.form['email'], request.form['password'],
+        risposta = user.register(request.form['username'], request.form['email'], request.form['password'],
                              request.form["username"], request.form["username"])
+        print(risposta)
+        return risposta
 
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
