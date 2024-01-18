@@ -27,11 +27,11 @@ $(document).ready(() => {
         let email = $("#userEmail").val();
         let emailRegex = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$");
         if (email == "") {
-            document.getElementById("emaiErrorSpan").innerText = "Add your Email";
+            document.getElementById("emailErrorSpan").innerText = "Add your Email";
             document.getElementById("emailError").classList.remove("hide");
             error = true;
         } else if (!emailRegex.test(email)) {
-            document.getElementById("emaiErrorSpan").innerText = "Add a valid Email";
+            document.getElementById("emailErrorSpan").innerText = "Add a valid Email";
             document.getElementById("emailError").classList.remove("hide");
             error = true;
         } else {
@@ -63,12 +63,10 @@ $(document).ready(() => {
                     document.getElementById("handleErrorSpan").innerText = "Already in use, sorry";
                     document.getElementById("handleError").classList.remove("hide");
                 } else if (result.message == "email già esistente") {
-                    document.getElementById("emaiErrorSpan").innerText = "An account is already connected, try to sign up";
+                    document.getElementById("emailErrorSpan").innerText = "An account is already connected, try to sign up";
                     document.getElementById("trylogin").href = "/auth/login";
                     document.getElementById("emailError").classList.remove("hide");
-                } else {
-                    //TODO: gestire errore
-                }
+                } else alert("Something went wrong, try again later");
             }));
         }
     });
