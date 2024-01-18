@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, session, url_for, jsonify
 from app.models import User
+import re
 
 auth_bp = Blueprint('auth', __name__)
 
@@ -41,10 +42,15 @@ def login():
         return render_template('auth/login.html')
     else:
         user = User()
-        if (request.form['username']):
-            return jsonify({'message': user.login(request.form['password'], username=request.form['username'])})
+        regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+
+        if re.fullmatch(regex, request.form['username']):
+            return jsonify({'message': user.login(request.form['password'], email=request.form['username'])})
         else:
-            return jsonify({'message': user.login(request.form['password'], mail=request.form['email'])})
+            return jsonify({'message': user.login(request.form['password'], username=request.form['username'])})
+
+
+
 
 
 @auth_bp.route('/verify/<codice_verifica>')

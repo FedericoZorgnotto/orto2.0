@@ -166,7 +166,7 @@ class User:
             print("errore durante la registrazione: ", e)
             return jsonify({"message": "errore interno"})
 
-    def login(self, password, username=None, mail=None):
+    def login(self, password, username=None, email=None):
         try:
             cursor = self.database.connection.cursor()
             if username:
@@ -174,7 +174,7 @@ class User:
                 data = (username,)
             else:
                 query = "SELECT * FROM auth WHERE email = %s"
-                data = (mail,)
+                data = (email,)
             cursor.execute(query, data)
             result = cursor.fetchone()
             if result:
