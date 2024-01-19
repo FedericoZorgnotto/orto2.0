@@ -3,7 +3,6 @@ $(document).ready(() => {
         let error = false;
 
         if ($("#userEmail").val() == "") {
-            document.getElementById("emailErrorSpan").innerText = "Add your Email or Username";
             document.getElementById("emailError").classList.remove("hide");
             error = true;
         } else {
@@ -19,21 +18,23 @@ $(document).ready(() => {
 
         if (!error) {
             startLoaderAnimation();
-            criptLogin($("#userEmail").val(), $("#userPassword").val(), (result) => {
-                stopLoaderAnimation();
-                if (result.message == "successo") {
+            criptLogin($("#userEmail").val(), $("#userPassword").val(), (message) => {
+                if (message.message == "successo") {
                     localStorage.setItem("sessionUn", body.username);
                     localStorage.setItem("sessionPwd", body.password);
+                    stopLoaderAnimation();
 
-                } else if (result.message == 'utente non trovato') {
+                } else if (message.message == 'utente non trovato') {
                     document.getElementById("emailErrorSpan").innerText = "We didn't find anything, try to sing up";
                     document.getElementById("trysignup").href = "/auth/register";
                     document.getElementById("emailError").classList.remove("hide");
+                    stopLoaderAnimation();
 
-                } else if (result.message == "password errata") {
+                } else if (message.message == "password errata") {
                     document.getElementById("passwordErrorSpan").innerText = "Wrong one, nice try";
                     document.getElementById("passwordError").classList.remove("hide");
-                } else alert("Something went wrong, try again later");
+                    stopLoaderAnimation();
+                }
             });
         }
     });

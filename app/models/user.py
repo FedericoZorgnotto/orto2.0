@@ -214,3 +214,16 @@ class User:
         except Exception as e:
             print("errore durante la verifica: ", e)
             return 'errore interno'
+    def getId(self, username):
+        try:
+            cursor = self.database.connection.cursor()
+            query = "SELECT id FROM users WHERE nome = %s"
+            cursor.execute(query, (username,))
+            result = cursor.fetchone()
+            if result:
+                return result[0]
+            else:
+                return 'id non trovato'
+        except Exception as e:
+            print("errore durante la verifica: ", e)
+            return 'errore interno'

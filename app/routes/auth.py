@@ -54,6 +54,23 @@ def login():
 
 
 
+@auth_bp.route('/getId/<username>', methods=['GET', 'POST'])
+def getId(username):
+    """
+    params: username
+    casi:
+    - andato a buon fine -> return success code, url home
+    - username non esistente -> return error code (user not found)
+    - password errata -> return error code (wrong password)
+    - errore interno -> return error code (internal error)
+    """
+    if request.method == 'GET':
+        user = User()
+        id = user.getId(username)
+        return jsonify(id)
+    else:
+        return jsonify("metodo errato, usa il metodo 'get'")
+
 
 @auth_bp.route('/verify/<codice_verifica>')
 def verify(codice_verifica):
