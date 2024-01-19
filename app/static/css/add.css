@@ -1,0 +1,237 @@
+/* --- Color Palette --- */
+body {
+    background-color: var(--green);
+}
+
+nav a, #slash, #home {
+    color: var(--white);
+}
+
+footer h3 {
+    color: var(--white);
+}
+
+.ball-Pointer, .visible-Ball-Pointer {
+    background-color: var(--white);
+}
+
+a:hover {
+    color: var(--white);
+}
+
+#credits {
+    color: var(--white);
+}
+
+.search-Bar {
+    color: var(--white);
+    background-color: var(--green);
+    border: solid 5px var(--white);
+}
+
+.search-Bar::placeholder {
+    color: var(--white);
+}
+
+/* --------------------- */
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#wrapper {
+    display: flex;
+    width: 90%;
+    margin-left: 13%;
+    justify-content: space-between;
+}
+
+
+/* --- Chat --- */
+.card {
+    color: var(--green);
+    background-color: white;
+    padding: 35px 50px 30px 55px;
+    border-radius: 35px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    width: 760px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 14.5%;
+    margin-top: 40px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#container h2 {
+    margin-top: 0;
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+#chat {
+    border: solid 5px var(--green);
+    height: 450px;
+    border-radius: 35px;
+    margin-bottom: 8px;
+}
+
+#messageContent {
+    color: var(--green);
+    border: solid 5px var(--green);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 35px;
+    padding: 15px;
+    width: 65%;
+}
+
+#interface {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+#create-Post {
+    color: var(--white);
+    background-color: var(--green);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    width: 180px;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 210px;
+    padding-left: 20px;
+    padding-top: 4px;
+    border-radius: 35px;
+    border: none;
+    text-align: left;
+    transition: text-indent 0.5s ease;
+}
+
+#create-Post:hover {
+    text-indent: 90px;
+}
+
+/* ------------ */
+
+
+/* --- Seller Card --- */
+#seller-Info {
+    background-color: white;
+    width: 400px;
+    height: 650px;
+    padding: 35px 50px 30px 55px;
+    border-radius: 35px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    color: var(--green);
+    margin-top: 40px;
+}
+
+input {
+    color: var(--green);
+    border: solid 5px var(--green);
+    border-radius: 35px;
+    height: 14px;
+    width: 355px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+input::placeholder {
+    color: var(--green);
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.negative-Feedback {
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+#postTitle {
+    color: var(--green);
+    border: none;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+#postTitle::placeholder {
+    color: var(--green);
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+#postContent {
+    color: var(--green);
+    border: solid 5px var(--green);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 35px;
+    padding: 15px;
+    height: 230px;
+    width: 350px;
+    resize: none;
+}
+
+#postContent::-webkit-scrollbar {
+    display: none;
+}
+
+#postContent::placeholder {
+    color: var(--green);
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#add-photos {
+    color: var(--white);
+    background-color: var(--green);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    width: 180px;
+    height: 50px;
+    margin-top: 550px;
+    margin-left: 570px;
+    padding-left: 20px;
+    padding-top: 4px;
+    border-radius: 35px;
+    border: none;
+    text-align: left;
+    transition: text-indent 0.5s ease;
+}
+
+#add-photos:hover {
+    text-indent: 100px;
+}
