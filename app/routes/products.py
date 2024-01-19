@@ -15,14 +15,14 @@ def add():
         return render_template('products/add.html')
     else:
         product = Product()
-        return jsonify(product.add(request.form["id_vendor"], request.form['name'], request.form['description'],
-                                   request.form['price'], request.form['quantity'], request.form['publication_date']))
+        return jsonify({"message": product.add(request.form["id_vendor"], request.form['name'], request.form['description'],
+                                   request.form['price'], request.form['quantity'], request.form['publication_date'])})
 
 
 @products_bp.route('/remove', methods=['POST'])
 def remove():
     product = Product()
-    return jsonify(product.remove(request.form["id_vendor"], request.form['id_product']))
+    return jsonify({"message": product.remove(request.form["id_vendor"], request.form['id_product'])})
 
 
 @products_bp.route('/research', methods=['GET', 'POST'])
@@ -38,22 +38,23 @@ def research():
         return render_template('products/research.html')
     else:
         product = Product()
-        return jsonify(product.get_list(int(request.form['offset']), int(request.form['limit'])))
+        return jsonify({"message": product.get_list(int(request.form['offset']), int(request.form['limit']))})
 
 
 @products_bp.route('/addImage', methods=['POST'])
 def addImage():
     product = Product()
-    return jsonify(product.add_picture(request.form['id_product'], request.form['base64'], request.form['main']))
+    return jsonify({"message": product.add_picture(request.form['id_product'], request.form['base64'], request.form['main'])})
 
 
 @products_bp.route('/getImages', methods=['POST'])
 def getImages():
     product = Product()
-    return jsonify(product.get_pictures(request.form['id_product']))
+    return jsonify({"message": product.get_pictures(request.form['id_product'])})
 
 
 @products_bp.route('/removeImage', methods=['POST'])
 def removeImage():
     product = Product()
-    return jsonify(product.remove_picture(request.form['id_image']))
+    return jsonify({"message": product.remove_picture(request.form['id_image'])})
+

@@ -60,7 +60,7 @@ class Product:
             "INSERT INTO products (id, id_venditore, nome, descrizione, costo, quantita, data_pubblicazione) VALUES (%s, %s, %s, %s, %s, %s, %s)",
             (id_element, id_vendor, name, description, price, quantity, publication_date))
         self.database.connection.commit()
-        return True
+        return id_element
 
     def remove(self, id_vendor, id):
         cursor = self.database.connection.cursor()
