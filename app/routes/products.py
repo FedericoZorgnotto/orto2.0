@@ -58,3 +58,6 @@ def removeImage():
     product = Product()
     return jsonify({"message": product.remove_picture(request.form['id_image'])})
 
+@products_bp.route('/contact', methods=['GET'])
+def contact():
+    return render_template('products/contact.html')

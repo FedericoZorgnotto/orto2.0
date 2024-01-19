@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/trade.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
-    <script href="{{ url_for('static', filename='scripts/trade.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/trade.js') }}"></script>
 </head>
 
 <body>
@@ -42,16 +42,16 @@
         <div class="header-right">
             <div class="selector">
                 <div class="ball-Pointer"></div>
-                <a id="home" href="index.html">HOME</a>
+                <a id="home" href="{{ url_for("home.index") }}">HOME</a>
             </div>
             <div class="account">
                 <div class="selector">
                     <div class="ball-Pointer"></div>
-                    <a class="noMargin" href="signup.html">SIGNUP</a>
+                    <a class="noMargin" href="{{ url_for("auth.register") }}">SIGNUP</a>
                 </div>
                 <div id="slash">/</div>
                 <div class="selector">
-                    <a class="noMargin" href="login.html">LOGIN</a>
+                    <a class="noMargin" href="{{ url_for("auth.login") }}">LOGIN</a>
                     <div class="ball-Pointer"></div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
     <div id="container">
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo5.png') }}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>John Smith</h3>
                     <div class="stars">
@@ -84,14 +84,14 @@
                 <h3>Via Torino 40, Saluzzo, CN</h3>
                 <h3>Quantity: <span class="italic">5kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Carota.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Carota.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('John Smith', 'CARROTS', 'Via Torino 40, Saluzzo, CN', '5kg', '4', '5')">CONTACT
+                    onclick="contact('{{url_for('products.contact')}}','John Smith', 'CARROTS', 'Via Torino 40, Saluzzo, CN', '5kg', '4', '5')">CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo4.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo4.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>Mary Johnson</h3>
                     <div class="stars">
@@ -108,14 +108,14 @@
                 <h3>Corso Piemonte 12, Cuneo, CN</h3>
                 <h3>Quantity: <span class="italic">6kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Mela.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Mela.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('Mary Johnson', 'APPLES', 'Corso Piemonte 12, Cuneo, CN', '6kg', '5', '4')">CONTACT
+                    onclick="contact('{{url_for('products.contact')}}','Mary Johnson', 'APPLES', 'Corso Piemonte 12, Cuneo, CN', '6kg', '5', '4')">CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo1.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo1.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>David Green</h3>
                     <div class="stars">
@@ -132,15 +132,15 @@
                 <h3>Via V.Veneto 75, Racconigi, CN</h3>
                 <h3>Quantity: <span class="italic">8kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Ciliege.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Ciliege.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('David Green', 'CHERRIES', 'Via V.Veneto 75, Racconigi, CN', '8kg', '3', '1')">
+                    onclick="contact('{{url_for('products.contact')}}','David Green', 'CHERRIES', 'Via V.Veneto 75, Racconigi, CN', '8kg', '3', '1')">
                 CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo2.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo2.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>Daniel Clark</h3>
                     <div class="stars">
@@ -157,15 +157,15 @@
                 <h3>Via G.Mazzini 11, Staffarda, CN</h3>
                 <h3>Quantity: <span class="italic">10kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Fungo.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Fungo.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('Daniel Clark', 'MOSHROOMS', 'Via G.Mazzini 11, Staffarda, CN', '10kg', '4', '2')">
+                    onclick="contact('{{url_for('products.contact')}}','Daniel Clark', 'MOSHROOMS', 'Via G.Mazzini 11, Staffarda, CN', '10kg', '4', '2')">
                 CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo3.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo3.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>Alex Green</h3>
                     <div class="stars">
@@ -182,15 +182,15 @@
                 <h3>Via D.Alighieri 64, Cuneo, CN</h3>
                 <h3>Quantity: <span class="italic">15kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Broccolo.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Broccolo.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('Alex Green', 'BROCCOLI', 'Via D.Alighieri 64, Cuneo, CN', '15kg', '5', '3')">
+                    onclick="contact('{{url_for('products.contact')}}','Alex Green', 'BROCCOLI', 'Via D.Alighieri 64, Cuneo, CN', '15kg', '5', '3')">
                 CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo4.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo4.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>Emma Roberts</h3>
                     <div class="stars">
@@ -207,15 +207,15 @@
                 <h3>Via V.Emanuele 33, Pinerolo, TO</h3>
                 <h3>Quantity: <span class="italic">6kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Anguria.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Anguria.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('Emma Roberts', 'WATERMELON', 'Via V.Emanuele 33, Pinerolo, TO', '6kg', '5', '4')">
+                    onclick="contact('{{url_for('products.contact')}}','Emma Roberts', 'WATERMELON', 'Via V.Emanuele 33, Pinerolo, TO', '6kg', '5', '4')">
                 CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo5.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>Michael Brown</h3>
                     <div class="stars">
@@ -232,15 +232,15 @@
                 <h3>Via XX Settembre 20, Manta, CN</h3>
                 <h3>Quantity: <span class="italic">9kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Mirtilli.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Mirtilli.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('Michael Brown', 'BLUEBERRIES', 'Via XX Settembre 20, Manta, CN', '9kg', '2', '5')">
+                    onclick="contact('{{url_for('products.contact')}}','Michael Brown', 'BLUEBERRIES', 'Via XX Settembre 20, Manta, CN', '9kg', '2', '5')">
                 CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo1.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo1.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>Daniel Thompson</h3>
                     <div class="stars">
@@ -257,15 +257,15 @@
                 <h3>Via San Giovanni 43, Barge, CN</h3>
                 <h3>Quantity: <span class="italic">3kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Uva.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Uva.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('Daniel Thompson', 'GRAPES', 'Via San Giovanni 43, Barge, CN', '3kg', '4', '1')">
+                    onclick="contact('{{url_for('products.contact')}}','Daniel Thompson', 'GRAPES', 'Via San Giovanni 43, Barge, CN', '3kg', '4', '1')">
                 CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo2.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo2.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>Jacob Cooper</h3>
                     <div class="stars">
@@ -282,14 +282,14 @@
                 <h3>Via Roma 51, Paesana, CN</h3>
                 <h3>Quantity: <span class="italic">7kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Lampone.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Lampone.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('Jacob Cooper', 'RASPBERRY', 'Via Roma 51, Paesana, CN', '7kg', '5', '2')">CONTACT
+                    onclick="contact('{{url_for('products.contact')}}','Jacob Cooper', 'RASPBERRY', 'Via Roma 51, Paesana, CN', '7kg', '5', '2')">CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo3.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo3.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>Noah Wright</h3>
                     <div class="stars">
@@ -306,15 +306,15 @@
                 <h3>Via San Rocco 22, Lagnasco, CN</h3>
                 <h3>Quantity: <span class="italic">12kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Zucca.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Zucca.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('Noah Wright', 'PUMPKINS', 'Via San Rocco 22, Lagnasco, CN', '12kg', '3', '3')">
+                    onclick="contact('{{url_for('products.contact')}}','Noah Wright', 'PUMPKINS', 'Via San Rocco 22, Lagnasco, CN', '12kg', '3', '3')">
                 CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo5.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>Andrew Cooper</h3>
                     <div class="stars">
@@ -331,15 +331,15 @@
                 <h3>Corso Dante 100, Busca, CN</h3>
                 <h3>Quantity: <span class="italic">5kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Fragola.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Fragola.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('Andrew Cooper', 'STRAWBERRIES', 'Corso Dante 100, Busca, CN', '5kg', '5', '5')">
+                    onclick="contact('{{url_for('products.contact')}}','Andrew Cooper', 'STRAWBERRIES', 'Corso Dante 100, Busca, CN', '5kg', '5', '5')">
                 CONTACT
             </button>
         </div>
         <div class="card">
             <div class="user-Info">
-                <img class="profile-Picture" src="img/pfp/Profilo4.png" alt="Profile Picture">
+                <img class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo4.png')}}" alt="Profile Picture">
                 <div class="user-Score">
                     <h3>Olivia Murphy</h3>
                     <div class="stars">
@@ -356,9 +356,9 @@
                 <h3>Via Pini 15, Verzuolo, CN</h3>
                 <h3>Quantity: <span class="italic">4kg</span></h3>
             </div>
-            <img class="product-Photo" src="img/products/Fungo.png" alt="Product Photo">
+            <img class="product-Photo" src="{{ url_for('static', filename='img/products/Fungo.png')}}" alt="Product Photo">
             <button class="contact-Seller"
-                    onclick="contact('Olivia Murphy', 'MOOSHROOMS', 'Via Pini 15, Verzuolo, CN', '4kg', '4', '4')">
+                    onclick="contact('{{url_for('products.contact')}}','Olivia Murphy', 'MOOSHROOMS', 'Via Pini 15, Verzuolo, CN', '4kg', '4', '4')">
                 CONTACT
             </button>
         </div>

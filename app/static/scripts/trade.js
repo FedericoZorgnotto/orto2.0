@@ -1,9 +1,6 @@
-function addSomething() {
-  location.href = "login.html";
-}
 
-function contact(name, product, streat, quantity, stars, image) {
-  location.href = "contact.html?name=" + name +
+function contact(url, name, product, streat, quantity, stars, image) {
+  location.href = url+"?name=" + name +
     "&product=" + product +
     "&streat=" + streat +
     "&quantity=" + quantity +

@@ -42,16 +42,16 @@
       <div class="header-right">
         <div class="selector">
           <div class="ball-Pointer"></div>
-          <a id="hone" href="index.html">HOME</a>
+          <a id="hone" href="{{ url_for("home.index") }}">HOME</a>
         </div>
         <div class="account">
           <div class="selector">
             <div class="ball-Pointer"></div>
-            <a class="noMargin" href="signup.html">SIGNUP</a>
+            <a class="noMargin" href="{{ url_for("auth.register") }}">SIGNUP</a>
           </div>
           <div id="slash">/</div>
           <div class="selector">
-            <a class="noMargin" href="login.html">LOGIN</a>
+            <a class="noMargin" href="{{ url_for("auth.login") }}">LOGIN</a>
             <div class="ball-Pointer"></div>
           </div>
         </div>
@@ -67,7 +67,7 @@
     <div id="wrapper">
       <div id="seller-Info">
         <div class="user-Info">
-          <img id="image" class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
+          <img id="image" class="profile-Picture" src="{{ url_for('static', filename='img/pfp/Profilo5.png')}}" alt="Profile Picture">
           <div class="user-Score">
             <h3 id="name"></h3>
             <div class="stars">

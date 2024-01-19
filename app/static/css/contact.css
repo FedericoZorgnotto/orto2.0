@@ -7,6 +7,10 @@ nav a, #slash, #home{
   color: var(--white);
 }
 
+a:hover {
+  color: var(--white);
+}
+
 footer h3{
   color: var(--white);
 }
