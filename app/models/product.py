@@ -57,7 +57,8 @@ class Product:
         cursor.execute("SELECT MAX(id) FROM products;")
         id_element = cursor.fetchone()[0]+1
         cursor.execute(
-            "INSERT INTO products (id, id_venditore, nome, descrizione, costo, quantita, data_pubblicazione) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+            "INSERT INTO products (id, id_venditore, nome, descrizione, costo, quantita, data_pubblicazione) VALUES ("
+            "%s, %s, %s, %s, %s, %s, %s)",
             (id_element, id_vendor, name, description, price, quantity, publication_date))
         self.database.connection.commit()
         return id_element

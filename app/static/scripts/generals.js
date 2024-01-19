@@ -44,7 +44,6 @@ function login(username, password, callback) {
 }
 
 function sendReq(method, url, body, callback) {
-    console.log(body)
     switch (method) {
         case "get":
             $.get((url == null) ? location.href : url, (result) => {

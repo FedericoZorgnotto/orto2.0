@@ -16,7 +16,6 @@ $(document).ready(() => {
       let reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = function(e) {
-        console.log(e.target.result);
         previewImage.src = e.target.result;
         previewImage.classList.remove("invisible");
         img = true;
@@ -78,22 +77,23 @@ function addElement(title, description, price, amount) {
       price: price,
       quantity: amount,
       publication_date: date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate().toString().padStart(2, '0')
-    })
-    console.log(body);
-    sendReq("post", "https://" + host + "products/add", body, (result) => {
-      console.log(result.message)
+    });
+    sendReq("post", "https://" + location.host + "/products/add", body, (result) => {
+      console.log(result.message);
+
+      /*
       let bodyImage = ({
-        id_product: result.message,
-        base64: previewImage.src,
-        main: true,
+          id_product: result.message,
+          base64: previewImage.src,
+          main: true,
       })
-      sendReq("post", "https://" + host + "products/addImage", bodyImage, (resultImg) => {
+      sendReq("post", "https://" + location.host + "/products/addImage", bodyImage, (resultImg) => {
         console.log(resultImg.message)
-      })
+      })*/
     })
   })
 }
 
 function getId(username, callback) {
-  sendReq("get", "https://" + host + "/auth/getId/" + username, undefined, callback);
+  sendReq("get", "https://" + location.host + "/auth/getId/" + username, undefined, callback);
 }
