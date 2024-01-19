@@ -30,13 +30,13 @@
     <div id="centro">
         <div class="wrapper">
             <div class="grid1">
-                <span id="text1">ABOUT</span>
+                <a id="text1" href="{{ url_for("wip.index") }}">ABOUT</a>
             </div>
             <div class="grid2">
-                <span id="text2">LEARN</span>
+                <a id="text2" href="{{ url_for("wip.index") }}">LEARN</a>
             </div>
             <div class="grid3">
-                <span id="text3" href="{{ url_for("products.research") }}">BUY</span>
+                <a id="text3" href="{{ url_for("products.research") }}">BUY</a>
             </div>
             <div class="grid4">
                 <a id="text4up" href="{{ url_for("auth.login") }}">LOGIN</a>
