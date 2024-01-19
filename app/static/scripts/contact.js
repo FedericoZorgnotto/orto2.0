@@ -11,9 +11,6 @@ const sentences = [
   "I've consistently spent my days in the cultivation of my garden. Ready to share my garden's wealth and the knowledge I've accumulated, I've decided to sign up for this platform."
 ];
 
-
-
-
 window.addEventListener("load", function() {
 
   let urlParams = new URLSearchParams(window.location.search);

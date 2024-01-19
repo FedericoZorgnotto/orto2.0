@@ -2,357 +2,376 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Trade | GARDEN 2.0</title>
+    <meta charset="UTF-8">
+    <title>Trade | GARDEN 2.0</title>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Trade products from your garden with other users, negotiate the exchange directly with the seller">
-  <meta name="keywords" content="garden 2.0, GARDEN 2.0, garden2.0, GARDEN2.0, trade, Trade, exchange, Exchange">
-  <meta name="author" content="Audifreddi Pietro, Zorgnotto Federico">
-  <meta property="og:title" content="Trade | GARDEN 2.0" />
-  <meta property="og:description"
-    content="Trade products from your garden with other users, negotiate the exchange directly with the seller" />
-  <meta property="og:type" content="website" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Trade products from your garden with other users, negotiate the exchange directly with the seller">
+    <meta name="keywords" content="garden 2.0, GARDEN 2.0, garden2.0, GARDEN2.0, trade, Trade, exchange, Exchange">
+    <meta name="author" content="Audifreddi Pietro, Zorgnotto Federico">
+    <meta property="og:title" content="Trade | GARDEN 2.0"/>
+    <meta property="og:description"
+          content="Trade products from your garden with other users, negotiate the exchange directly with the seller"/>
+    <meta property="og:type" content="website"/>
 
-  <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/transition.css" />
-  <link rel="stylesheet" href="css/trade.css">
-  <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/trade.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <script href="{{ url_for('static', filename='scripts/trade.js') }}"></script>
 </head>
 
 <body>
-  <div class="transition transition-3 is-active"></div>
-  <header>
+<div class="transition transition-3 is-active"></div>
+<header>
     <nav>
-      <div class="header-left">
-        <div class="selector">
-          <div class="visible-Ball-Pointer"></div>
-          <a href="trade.html">TRADE</a>
+        <div class="header-left">
+            <div class="selector">
+                <div class="visible-Ball-Pointer"></div>
+                <a href="{{ url_for("products.research") }}">TRADE</a>
+            </div>
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a href="{{ url_for("wip.index") }}">PURCHASE</a>
+            </div>
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a href="{{ url_for("wip.index") }}">LEARN</a>
+            </div>
         </div>
-        <div class="selector">
-          <div class="ball-Pointer"></div>
-          <a href="purchase.html">PURCHASE</a>
+        <div class="header-right">
+            <div class="selector">
+                <div class="ball-Pointer"></div>
+                <a id="home" href="index.html">HOME</a>
+            </div>
+            <div class="account">
+                <div class="selector">
+                    <div class="ball-Pointer"></div>
+                    <a class="noMargin" href="signup.html">SIGNUP</a>
+                </div>
+                <div id="slash">/</div>
+                <div class="selector">
+                    <a class="noMargin" href="login.html">LOGIN</a>
+                    <div class="ball-Pointer"></div>
+                </div>
+            </div>
         </div>
-        <div class="selector">
-          <div class="ball-Pointer"></div>
-          <a href="learn.html">LEARN</a>
-        </div>
-      </div>
-      <div class="header-right">
-        <div class="selector">
-          <div class="ball-Pointer"></div>
-          <a id="home" href="index.html">HOME</a>
-        </div>
-        <div class="account">
-          <div class="selector">
-            <div class="ball-Pointer"></div>
-            <a class="noMargin" href="signup.html">SIGNUP</a>
-          </div>
-          <div id="slash">/</div>
-          <div class="selector">
-            <a class="noMargin" href="login.html">LOGIN</a>
-            <div class="ball-Pointer"></div>
-          </div>
-        </div>
-      </div>
     </nav>
     <input type="text" class="search-Bar" placeholder="Type here, we will find it for you">
-  </header>
+</header>
 
-  <main>
+<main>
     <div class="user-Interactions">
-      <h1>CLOSE TO YOU</h1>
-      <button class="upload-Something" onclick="addSomething()">upload something</button>
+        <h1>CLOSE TO YOU</h1>
+        <button class="upload-Something" onclick="addSomething()">upload something</button>
     </div>
     <div id="container">
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>John Smith</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star gray"></div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>John Smith</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star gray"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="product-Info">
-          <h2>CARROTS</h2>
-          <h3>Via Torino 40, Saluzzo, CN</h3>
-          <h3>Quantity: <span class="italic">5kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Carota.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('John Smith', 'CARROTS', 'Via Torino 40, Saluzzo, CN', '5kg', '4', '5')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo4.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>Mary Johnson</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
+            <div class="product-Info">
+                <h2>CARROTS</h2>
+                <h3>Via Torino 40, Saluzzo, CN</h3>
+                <h3>Quantity: <span class="italic">5kg</span></h3>
             </div>
-          </div>
+            <img class="product-Photo" src="img/products/Carota.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('John Smith', 'CARROTS', 'Via Torino 40, Saluzzo, CN', '5kg', '4', '5')">CONTACT
+            </button>
         </div>
-        <div class="product-Info">
-          <h2>APPLES</h2>
-          <h3>Corso Piemonte 12, Cuneo, CN</h3>
-          <h3>Quantity: <span class="italic">6kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Mela.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('Mary Johnson', 'APPLES', 'Corso Piemonte 12, Cuneo, CN', '6kg', '5', '4')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo1.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>David Green</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star gray"></div>
-              <div class="star gray"></div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo4.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>Mary Johnson</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="product-Info">
-          <h2>CHERRIES</h2>
-          <h3>Via V.Veneto 75, Racconigi, CN</h3>
-          <h3>Quantity: <span class="italic">8kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Ciliege.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('David Green', 'CHERRIES', 'Via V.Veneto 75, Racconigi, CN', '8kg', '3', '1')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo2.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>Daniel Clark</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star gray"></div>
+            <div class="product-Info">
+                <h2>APPLES</h2>
+                <h3>Corso Piemonte 12, Cuneo, CN</h3>
+                <h3>Quantity: <span class="italic">6kg</span></h3>
             </div>
-          </div>
+            <img class="product-Photo" src="img/products/Mela.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('Mary Johnson', 'APPLES', 'Corso Piemonte 12, Cuneo, CN', '6kg', '5', '4')">CONTACT
+            </button>
         </div>
-        <div class="product-Info">
-          <h2>MOSHROOMS</h2>
-          <h3>Via G.Mazzini 11, Staffarda, CN</h3>
-          <h3>Quantity: <span class="italic">10kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Fungo.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('Daniel Clark', 'MOSHROOMS', 'Via G.Mazzini 11, Staffarda, CN', '10kg', '4', '2')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo3.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>Alex Green</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo1.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>David Green</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star gray"></div>
+                        <div class="star gray"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="product-Info">
-          <h2>BROCCOLI</h2>
-          <h3>Via D.Alighieri 64, Cuneo, CN</h3>
-          <h3>Quantity: <span class="italic">15kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Broccolo.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('Alex Green', 'BROCCOLI', 'Via D.Alighieri 64, Cuneo, CN', '15kg', '5', '3')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo4.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>Emma Roberts</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star gray"></div>
+            <div class="product-Info">
+                <h2>CHERRIES</h2>
+                <h3>Via V.Veneto 75, Racconigi, CN</h3>
+                <h3>Quantity: <span class="italic">8kg</span></h3>
             </div>
-          </div>
+            <img class="product-Photo" src="img/products/Ciliege.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('David Green', 'CHERRIES', 'Via V.Veneto 75, Racconigi, CN', '8kg', '3', '1')">
+                CONTACT
+            </button>
         </div>
-        <div class="product-Info">
-          <h2>WATERMELON</h2>
-          <h3>Via V.Emanuele 33, Pinerolo, TO</h3>
-          <h3>Quantity: <span class="italic">6kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Anguria.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('Emma Roberts', 'WATERMELON', 'Via V.Emanuele 33, Pinerolo, TO', '6kg', '5', '4')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>Michael Brown</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star gray"></div>
-              <div class="star gray"></div>
-              <div class="star gray"></div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo2.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>Daniel Clark</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star gray"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="product-Info">
-          <h2>BLUEBERRIES</h2>
-          <h3>Via XX Settembre 20, Manta, CN</h3>
-          <h3>Quantity: <span class="italic">9kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Mirtilli.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('Michael Brown', 'BLUEBERRIES', 'Via XX Settembre 20, Manta, CN', '9kg', '2', '5')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo1.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>Daniel Thompson</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star gray"></div>
+            <div class="product-Info">
+                <h2>MOSHROOMS</h2>
+                <h3>Via G.Mazzini 11, Staffarda, CN</h3>
+                <h3>Quantity: <span class="italic">10kg</span></h3>
             </div>
-          </div>
+            <img class="product-Photo" src="img/products/Fungo.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('Daniel Clark', 'MOSHROOMS', 'Via G.Mazzini 11, Staffarda, CN', '10kg', '4', '2')">
+                CONTACT
+            </button>
         </div>
-        <div class="product-Info">
-          <h2>GRAPES</h2>
-          <h3>Via San Giovanni 43, Barge, CN</h3>
-          <h3>Quantity: <span class="italic">3kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Uva.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('Daniel Thompson', 'GRAPES', 'Via San Giovanni 43, Barge, CN', '3kg', '4', '1')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo2.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>Jacob Cooper</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo3.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>Alex Green</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="product-Info">
-          <h2>RASPBERRY</h2>
-          <h3>Via Roma 51, Paesana, CN</h3>
-          <h3>Quantity: <span class="italic">7kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Lampone.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('Jacob Cooper', 'RASPBERRY', 'Via Roma 51, Paesana, CN', '7kg', '5', '2')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo3.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>Noah Wright</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star gray"></div>
-              <div class="star gray"></div>
+            <div class="product-Info">
+                <h2>BROCCOLI</h2>
+                <h3>Via D.Alighieri 64, Cuneo, CN</h3>
+                <h3>Quantity: <span class="italic">15kg</span></h3>
             </div>
-          </div>
+            <img class="product-Photo" src="img/products/Broccolo.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('Alex Green', 'BROCCOLI', 'Via D.Alighieri 64, Cuneo, CN', '15kg', '5', '3')">
+                CONTACT
+            </button>
         </div>
-        <div class="product-Info">
-          <h2>PUMPKINS</h2>
-          <h3>Via San Rocco 22, Lagnasco, CN</h3>
-          <h3>Quantity: <span class="italic">12kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Zucca.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('Noah Wright', 'PUMPKINS', 'Via San Rocco 22, Lagnasco, CN', '12kg', '3', '3')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>Andrew Cooper</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo4.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>Emma Roberts</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star gray"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="product-Info">
-          <h2>STRAWBERRIES</h2>
-          <h3>Corso Dante 100, Busca, CN</h3>
-          <h3>Quantity: <span class="italic">5kg</span></h3>
-        </div>
-        <img class="product-Photo" src="img/products/Fragola.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('Andrew Cooper', 'STRAWBERRIES', 'Corso Dante 100, Busca, CN', '5kg', '5', '5')">CONTACT</button>
-      </div>
-      <div class="card">
-        <div class="user-Info">
-          <img class="profile-Picture" src="img/pfp/Profilo4.png" alt="Profile Picture">
-          <div class="user-Score">
-            <h3>Olivia Murphy</h3>
-            <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star gray"></div>
+            <div class="product-Info">
+                <h2>WATERMELON</h2>
+                <h3>Via V.Emanuele 33, Pinerolo, TO</h3>
+                <h3>Quantity: <span class="italic">6kg</span></h3>
             </div>
-          </div>
+            <img class="product-Photo" src="img/products/Anguria.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('Emma Roberts', 'WATERMELON', 'Via V.Emanuele 33, Pinerolo, TO', '6kg', '5', '4')">
+                CONTACT
+            </button>
         </div>
-        <div class="product-Info">
-          <h2>MOOSHROOMS</h2>
-          <h3>Via Pini 15, Verzuolo, CN</h3>
-          <h3>Quantity: <span class="italic">4kg</span></h3>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>Michael Brown</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star gray"></div>
+                        <div class="star gray"></div>
+                        <div class="star gray"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-Info">
+                <h2>BLUEBERRIES</h2>
+                <h3>Via XX Settembre 20, Manta, CN</h3>
+                <h3>Quantity: <span class="italic">9kg</span></h3>
+            </div>
+            <img class="product-Photo" src="img/products/Mirtilli.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('Michael Brown', 'BLUEBERRIES', 'Via XX Settembre 20, Manta, CN', '9kg', '2', '5')">
+                CONTACT
+            </button>
         </div>
-        <img class="product-Photo" src="img/products/Fungo.png" alt="Product Photo">
-        <button class="contact-Seller"
-          onclick="contact('Olivia Murphy', 'MOOSHROOMS', 'Via Pini 15, Verzuolo, CN', '4kg', '4', '4')">CONTACT</button>
-      </div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo1.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>Daniel Thompson</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star gray"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-Info">
+                <h2>GRAPES</h2>
+                <h3>Via San Giovanni 43, Barge, CN</h3>
+                <h3>Quantity: <span class="italic">3kg</span></h3>
+            </div>
+            <img class="product-Photo" src="img/products/Uva.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('Daniel Thompson', 'GRAPES', 'Via San Giovanni 43, Barge, CN', '3kg', '4', '1')">
+                CONTACT
+            </button>
+        </div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo2.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>Jacob Cooper</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-Info">
+                <h2>RASPBERRY</h2>
+                <h3>Via Roma 51, Paesana, CN</h3>
+                <h3>Quantity: <span class="italic">7kg</span></h3>
+            </div>
+            <img class="product-Photo" src="img/products/Lampone.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('Jacob Cooper', 'RASPBERRY', 'Via Roma 51, Paesana, CN', '7kg', '5', '2')">CONTACT
+            </button>
+        </div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo3.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>Noah Wright</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star gray"></div>
+                        <div class="star gray"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-Info">
+                <h2>PUMPKINS</h2>
+                <h3>Via San Rocco 22, Lagnasco, CN</h3>
+                <h3>Quantity: <span class="italic">12kg</span></h3>
+            </div>
+            <img class="product-Photo" src="img/products/Zucca.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('Noah Wright', 'PUMPKINS', 'Via San Rocco 22, Lagnasco, CN', '12kg', '3', '3')">
+                CONTACT
+            </button>
+        </div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo5.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>Andrew Cooper</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-Info">
+                <h2>STRAWBERRIES</h2>
+                <h3>Corso Dante 100, Busca, CN</h3>
+                <h3>Quantity: <span class="italic">5kg</span></h3>
+            </div>
+            <img class="product-Photo" src="img/products/Fragola.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('Andrew Cooper', 'STRAWBERRIES', 'Corso Dante 100, Busca, CN', '5kg', '5', '5')">
+                CONTACT
+            </button>
+        </div>
+        <div class="card">
+            <div class="user-Info">
+                <img class="profile-Picture" src="img/pfp/Profilo4.png" alt="Profile Picture">
+                <div class="user-Score">
+                    <h3>Olivia Murphy</h3>
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star gray"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-Info">
+                <h2>MOOSHROOMS</h2>
+                <h3>Via Pini 15, Verzuolo, CN</h3>
+                <h3>Quantity: <span class="italic">4kg</span></h3>
+            </div>
+            <img class="product-Photo" src="img/products/Fungo.png" alt="Product Photo">
+            <button class="contact-Seller"
+                    onclick="contact('Olivia Murphy', 'MOOSHROOMS', 'Via Pini 15, Verzuolo, CN', '4kg', '4', '4')">
+                CONTACT
+            </button>
+        </div>
     </div>
-  </main>
+</main>
 
-  <footer>
+<footer>
     <h3>GARDEN 2.0 © 2023</h3>
-  </footer>
+</footer>
 
 </body>
 
-<script src="js/transition.js"></script>
-<script src="js/trade.js"></script>
 
 </html>

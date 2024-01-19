@@ -14,11 +14,10 @@
   <meta property="og:description" content="Contact and negotiate directly with the seller" />
   <meta property="og:type" content="website" />
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/transition.css" />
-  <link rel="stylesheet" href="css/contact.css">
-  <script src="js/contact.js"></script>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script src="{{ url_for('static', filename='scripts/contact.js') }}"></script>
 
 </head>
 
