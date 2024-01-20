@@ -22,6 +22,7 @@ $(document).ready(() => {
                 if (message.message == "successo") {
                     localStorage.setItem("sessionUn", body.username);
                     localStorage.setItem("sessionPwd", body.password);
+		    location.href="/";
                     stopLoaderAnimation();
 
                 } else if (message.message == 'utente non trovato') {
