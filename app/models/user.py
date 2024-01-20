@@ -2,7 +2,7 @@ from app.services import database
 from app.services import email_sender
 import random
 from flask import url_for, request, jsonify
-
+import os
 
 class User:
     def __init__(self):
@@ -14,7 +14,7 @@ class User:
         self.address = None
         self.password = None
         self.logged = False
-        self.database = database(host="109.123.240.145", user="root", password="qP4yzK2Lyz6XcGk7B2E7Z", database="orto")
+        self.database = database(host=os.environ.get("mysql_host"), user=os.environ.get("mysql_user"), password=os.environ.get("mysql_password"), database=os.environ.get("mysql_db"))
         self.email_sender = email_sender('smtp.gmail.com', 587,
                                          'noreply.orto2.0@gmail.com',
                                          'kabo mmys fwip ldxl')
